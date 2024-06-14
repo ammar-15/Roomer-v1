@@ -46,6 +46,10 @@ nav {
   padding: 0px;
   margin: 0px;
   overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar a{
