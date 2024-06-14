@@ -3,6 +3,67 @@ h1 {
   text-align: center;
 }
 
+body {
+  margin: 0px;
+}
+
+main {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.date {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 500px;
+}
+
+.dailyData {
+  padding-top: 20px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dailyData > div {
+  margin-left: 90px; 
+  align-items: center;
+}
+
+nav {
+  margin-top: 40px;
+}
+
+.navbar ul{
+  list-style-type: none;
+  background-color: hsl(0, 0%, 29%);
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover{
+  background-color: hsl(0, 0%, 10%);
+}
+
+.navbar li{
+  float: left;
+}
+
 table {
     padding-top: 30px;
     display: flex;
@@ -20,30 +81,9 @@ table {
     padding: 4px;
   }
 
-.date {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-left: 500px;
-}
-
-.dailyData {
-    padding-top: 20px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-}
-.dailyData > div {
-    margin-left: 90px; 
-    align-items: center;
-}
 
 .search {
-    padding-top: 50px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
