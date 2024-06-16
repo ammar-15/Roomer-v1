@@ -68,8 +68,33 @@ nav {
   float: left;
 }
 
+.search {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.addroom-container {
+  background-color: aqua;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.add-room {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
 table {
-    padding-top: 30px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,9 +111,3 @@ table {
   }
 
 
-.search {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
