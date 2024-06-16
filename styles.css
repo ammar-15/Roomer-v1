@@ -93,6 +93,46 @@ nav {
   border-color: aqua;
 }
 
+.add-latecheckout {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
+.add-newstayover {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
+.add-noshow {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
+.add-notes {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
 table {
     padding: 30px;
     display: flex;
