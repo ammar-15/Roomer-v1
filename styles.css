@@ -151,6 +151,14 @@ table {
   .notes-h2 {
     margin-top: 0px;
     padding: 10px;
+    font-size: 120px;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: rgb(67, 76, 48);
+    outline: none;
+    text-align: center;
   }
 
   .notes-main {
