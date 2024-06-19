@@ -62,6 +62,7 @@ nav {
 
 .navbar a:hover{
   background-color: hsl(0, 0%, 10%);
+  transition: background 0.4s;
 }
 
 .navbar li{
@@ -148,6 +149,15 @@ table {
     background-color: antiquewhite;
   }
 
+
+  .notes-main {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(135deg, #bcff9a, #96c0ff);
+    background-size: cover;
+    height: 100vh;
+  }
+
   .notes-h2 {
     margin-top: 0px;
     padding: 10px;
@@ -160,16 +170,7 @@ table {
     outline: none;
     text-align: center;
   }
-
-  .notes-main {
-    margin: 0px;
-    padding: 0px;
-    background: linear-gradient(135deg, #bcff9a, #96c0ff);
-    background-size: cover;
-    height: 100vh;
-  }
-
-  .addnotes-container {
+    .addnotes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     margin: 24px;
@@ -191,6 +192,9 @@ table {
 
   .add-notes:hover {
     background: rgba(0, 0, 0, 0.17);
+    font-variation-settings: "wght" 582; 
+    font-size: 160px;
+    transition: 400ms ease;
   }
 
 .note {
