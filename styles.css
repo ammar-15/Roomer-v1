@@ -137,18 +137,52 @@ table {
   
   td, th {
     width: 100px;
-    border: 1px solid #dddddd;
+    border: 0px solid #dddddd;
     text-align: center;
     padding: 4px;
   }
 
   th {
-    background-color: rgb(5, 208, 208);
+    background-color: rgba(5, 208, 208, 0.519);
   }
   tr {
-    background-color: antiquewhite;
+    background-color: rgba(255, 255, 255, 0.479);
   }
 
+  .noshows-main {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(135deg, #9affd8, #c296ff);
+    background-size: cover;
+    height: 100vh;
+  }
+    
+  .noshows-h2 {
+    margin-top: 0px;
+    padding: 10px;
+    font-size: 120px;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: rgb(67, 76, 48);
+    outline: none;
+    text-align: center;
+  }
+
+  .addnoshow-container {
+    margin: 0px;
+    padding: 24x;
+    gap: 24px;
+  }
+  
+  #input-button {
+    border: none;
+  }
+
+  button {
+    border: none;
+  }
 
   .notes-main {
     margin: 0px;
