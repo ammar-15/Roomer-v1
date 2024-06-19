@@ -123,15 +123,6 @@ nav {
   border-color: aqua;
 }
 
-.add-notes {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
-}
 
 table {
     padding: 30px;
@@ -156,3 +147,54 @@ table {
   tr {
     background-color: antiquewhite;
   }
+
+  .notes-h2 {
+    margin-top: 0px;
+    padding: 10px;
+  }
+
+  .notes-main {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(135deg, #bcff9a, #96c0ff);
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .addnotes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    margin: 24px;
+    padding: 24x;
+    gap: 24px;
+
+  }
+
+  .add-notes {
+    background-color: rgba(24, 41, 15, 0.095);
+    border-radius: 10px;
+    font-size: 120px;
+    height: 200px;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.402);
+    transition: background 0.2s;
+  }
+
+  .add-notes:hover {
+    background: rgba(0, 0, 0, 0.17);
+  }
+
+.note {
+  height: 200px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7 rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+  
