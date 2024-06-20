@@ -58,11 +58,12 @@ nav {
   padding: 15px;
   display: block;
   text-align: center;
+  transition: 0.1s ease-out;
 }
 
 .navbar a:hover{
   background-color: hsl(0, 0%, 10%);
-  transition: background 0.4s;
+  transition: 0.2s ease-in;
 }
 
 .navbar li{
@@ -199,7 +200,14 @@ table {
     padding: 16px 50px;
     background: rgba(168, 204, 213, 0.433);
     border-radius: 15px;
+    font-size: 14px;
     cursor: pointer;
+  }
+
+  .noshow-button:hover {
+    background: rgba(0, 0, 0, 0.17);
+    font-size: 14px;
+    transition: 400ms ease-in-out;
   }
 
   .notes-main {
@@ -239,14 +247,14 @@ table {
     border: none;
     outline: none;
     color: rgba(0, 0, 0, 0.402);
-    transition: background 0.2s;
+    transition: 0.1s ease-out;
   }
 
   .add-notes:hover {
     background: rgba(0, 0, 0, 0.17);
     font-variation-settings: "wght" 582; 
     font-size: 160px;
-    transition: 400ms ease;
+    transition: 0.2s ease-in;
   }
 
 .note {
