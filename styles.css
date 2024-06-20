@@ -58,12 +58,12 @@ nav {
   padding: 15px;
   display: block;
   text-align: center;
-  transition: 0.1s ease-out;
 }
 
 .navbar a:hover{
   background-color: hsl(0, 0%, 10%);
   transition: 0.2s ease-in;
+
 }
 
 .navbar li{
@@ -138,17 +138,21 @@ table {
   
   td, th {
     width: 100px;
-    border: 0px solid #dddddd;
+    border: 5px solid #dddddd00;
     text-align: center;
     padding: 4px;
   }
 
   th {
-    background-color: rgba(5, 208, 208, 0.519);
+    background-color: rgba(5, 208, 208, 0);
   }
   tr {
-    background-color: rgba(255, 255, 255, 0.479);
+    background-color: rgba(255, 255, 255, 0);
   }
+
+
+
+/* NO SHOWS PAGE */
 
   .noshows-main {
     margin: 0px;
@@ -209,6 +213,20 @@ table {
     font-size: 14px;
     transition: 400ms ease-in-out;
   }
+
+.no-shows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+
+.noshows-table {
+  border: 10px;
+}
+
+/* NOTES PAGE */
 
   .notes-main {
     margin: 0px;
