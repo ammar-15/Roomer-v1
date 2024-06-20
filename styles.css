@@ -216,14 +216,54 @@ table {
 
 .no-shows {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 10px;
+  justify-content: center; 
+  align-items: center; 
 }
 
 
-.noshows-table {
-  border: 10px;
+.noshows-list {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  gap: 10px;
+  font-size: large;
+  padding: 30px;
+  border-radius: 30px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+
+}
+
+.noshows-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  font-weight: 600;
+}
+
+.noshows-list li::before {
+  content: '';
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/uncheck.png);
+  background-size: cover;
+  background-position: center;
+}
+
+li.noshow-checked {
+  font-weight: 100;
+}
+
+li.noshow-checked::before {
+  background-image: url(images/check.png);
+
 }
 
 /* NOTES PAGE */
