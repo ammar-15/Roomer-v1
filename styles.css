@@ -148,7 +148,7 @@ table {
 .latecheckout-h2 {
   margin-top: 0px;
   padding: 10px;
-  font-size: 120px;
+  font-size: 100px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
@@ -270,7 +270,7 @@ position: relative;
 .newstayovers-h2 {
   margin-top: 0px;
   padding: 10px;
-  font-size: 120px;
+  font-size: 100px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
@@ -370,15 +370,6 @@ background-image: url(images/check.png);
 /* NO SHOWS PAGE */
 
 
-.add-noshows {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
-}
 
   .noshows-main {
     margin: 0px;
@@ -391,7 +382,7 @@ background-image: url(images/check.png);
   .noshows-h2 {
     margin-top: 0px;
     padding: 10px;
-    font-size: 120px;
+    font-size: 100px;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
@@ -400,6 +391,16 @@ background-image: url(images/check.png);
     outline: none;
     text-align: center;
   }
+
+.add-noshows {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
 
   .addnoshows-container {
     margin: 0px 300px 0px;
@@ -505,7 +506,7 @@ li.noshows-checked::before {
   .notes-h2 {
     margin-top: 0px;
     padding: 10px;
-    font-size: 120px;
+    font-size: 100px;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
