@@ -27,59 +27,56 @@
                 <li><a href="notes.html">Notes</a></li>
             </ul>
         </nav>
-        <main>
-        <div class="search">Search bar</div>
-        <div class="addroom-container">
-            <div class="add-room">
-                <input type="text" id="input-button" placeholder="Add room">
-                <button>Add</button>
+        <main class="latecheckout-main">
+            <div class="addroom-container">
+                <h2 class="addroom-h2">Checkouts</h2>
+                <div class="search">
+                    <input type="text" id="searchinput-button" placeholder="Search room">
+                    <button class="search-button"><img src="images/search.png"></button>
+               </div>
+                <div class="add-room">
+                    <input type="text" id="addroominput-button" placeholder="Add room">
+                    <button class="addroom-button">Add</button>
+                </div>
             </div>
-        </div>
         <div class="floor">
-            <table>
-                <tr>
-                    <th>1st Floor</th>
-                    <th>2nd Floor</th>
-                    <th>3rd Floor</th>
-                    <th>4th Floor</th>
-                </tr>
-                <tr>
-                    <td>101</td>
-                    <td>215</td>
-                    <td>333</td>
-                    <td>450</td>
-                </tr>
-                <tr>
-                    <td>121</td>
-                    <td>209</td>
-                    <td>312</td>
-                    <td>433</td>
-                </tr>
-                <tr>
-                    <td>117</td>
-                    <td>224</td>
-                    <td>303</td>
-                    <td>427</td>
-                </tr>
-                <tr>
-                    <td>130</td>
-                    <td>240</td>
-                    <td>321</td>
-                    <td>404</td>
-                </tr>
-                <tr>
-                    <td>119</td>
-                    <td>207</td>
-                    <td>348</td>
-                    <td>414</td>
-                </tr>
-                <tr>
-                    <td>125</td>
-                    <td>226</td>
-                    <td>343</td>
-                    <td>462</td>
-                </tr>
-            </table>
+            <ul class="first-floor">
+                <p>First Floor</p>
+                <li>101</li>
+                <li>113</li>
+                <li>119</li>
+                <li>121</li>
+            </ul>
+            <ul class="second-floor">
+                <p>Second Floor</p>
+                <li>221</li>
+                <li>223</li>
+                <li>213</li>
+                <li>220</li>
+                <li>212</li>
+                <li>202</li>
+            </ul>
+            <ul class="third-floor">
+                <p>Third Floor</p>
+                <li>302</li>
+                <li>358</li>
+                <li>341</li>
+                <li>332</li>
+                <li>362</li>
+                <li>310</li>
+                <li>309</li>
+                <li>315</li>
+                <li>314</li>
+            </ul>
+            <ul class="fourth-floor">
+                <p>Fourth Floor</p>
+                <li>404</li>
+                <li>444</li>
+                <li>420</li>
+                <li>413</li>
+                <li>411</li>
+                <li>424</li>
+            </ul>
         </div>
     </main>
         <script src="index.js" async defer></script>

@@ -70,31 +70,6 @@ nav {
   float: left;
 }
 
-.search {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* 
-.addroom-container {
-  background-color: aqua;
-  background-size: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-.add-room {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
-}
-
 table {
     padding: 30px;
     display: flex;
@@ -119,17 +94,200 @@ table {
     background-color: rgba(255, 255, 255, 0);
   }
 
+/* HOME PAGE */
+
+.addroom-main {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(135deg, #9affd8, #c296ff);
+  background-size: cover;
+  height: 100vh;
+}
+  
+.addroom-container {
+  margin: 0px 100px 0px;
+  padding: 24px;
+}
+
+.addroom-h2 {
+  margin-top: 0px;
+  padding: 10px;
+  font-size: 100px;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: rgb(67, 76, 48);
+  outline: none;
+  text-align: center;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 200px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+}
+#searchinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+.search-button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-button img {
+  max-width: 24px;
+}
+
+.search-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 14px;
+  transition: 400ms ease-in-out;
+}  
+
+
+.add-room {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 200px;
+  margin-top: 40px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+#addroominput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+.addroom-button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addroom-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 14px;
+  transition: 400ms ease-in-out;
+}
+
+.floor{
+display: flex;
+justify-content: center; 
+align-items:first baseline; 
+gap: 10px;
+}
+
+.first-floor {
+width: 100%;
+max-width: 120px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+background: #fff;
+gap: 10px;
+font-size: large;
+padding: 30px;
+padding-top: 5px;
+border-radius: 30px;
+list-style: none;
+cursor: pointer;
+user-select: none;
+}
+
+.second-floor {
+  width: 100%;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  gap: 10px;
+  font-size: large;
+  padding: 30px;
+  padding-top: 5px;
+  border-radius: 30px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  }
+
+  .third-floor {
+    width: 100%;
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    gap: 10px;
+    font-size: large;
+    padding: 30px;
+    padding-top: 5px;
+    border-radius: 30px;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    }
+
+    .fourth-floor {
+      width: 100%;
+      max-width: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      gap: 10px;
+      font-size: large;
+      padding: 30px;
+      padding-top: 5px;
+      border-radius: 30px;
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      }
+
+      
 /* LATE CHECKOUT PAGE */
 
 
 .add-latecheckout {
-  padding: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   margin: 0px 200px;
-  gap: 10px; 
-  border-radius: 10px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 .latecheckout-main {
