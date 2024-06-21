@@ -95,18 +95,6 @@ nav {
   border-color: aqua;
 }
 
-.add-latecheckout {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
-}
-
-
-
 table {
     padding: 30px;
     display: flex;
@@ -130,6 +118,129 @@ table {
   tr {
     background-color: rgba(255, 255, 255, 0);
   }
+
+/* LATE CHECKOUT PAGE */
+
+
+.add-latecheckout {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 200px;
+  gap: 10px; 
+  border-radius: 10px;
+}
+
+.latecheckout-main {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(135deg, #9affd8, #c296ff);
+  background-size: cover;
+  height: 100vh;
+}
+  
+.addlatecheckout-container {
+  margin: 0px 100px 0px;
+  padding: 24px;
+}
+
+.latecheckout-h2 {
+  margin-top: 0px;
+  padding: 10px;
+  font-size: 120px;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: rgb(67, 76, 48);
+  outline: none;
+  text-align: center;
+}
+
+.add-latecheckout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 200px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+#latecheckoutinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+#latecheckout-time {
+  border: none;
+  flex: 0.5;
+  outline: none;
+  background: none;
+  padding: 10px 0px;
+  font-weight: 14px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+#latecheckout-time:hover {
+  background: rgba(0, 0, 0, 0.17);
+  transition: 400ms ease-in-out;
+
+}
+
+.latecheckout-button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.latecheckout-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 14px;
+  transition: 400ms ease-in-out;
+}
+
+.late-checkout{
+display: flex;
+justify-content: center; 
+align-items: center; 
+}
+
+.latecheckout-list {
+width: 100%;
+max-width: 300px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+background: #fff;
+gap: 10px;
+font-size: large;
+padding: 30px;
+border-radius: 30px;
+list-style: none;
+cursor: pointer;
+user-select: none;
+
+}
+
+.latecheckout-list li {
+display: flex;
+align-items: center;
+gap: 10px;
+position: relative;
+}
+
 
 /* NEW STAYOVERS PAGE */
 
