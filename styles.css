@@ -1,10 +1,22 @@
 h1 {
-  padding-top: 20px;
-  text-align: center;
+  margin-top: 0px;
+  padding: 10px;
+  font-size: 50px;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: rgb(67, 76, 48);
+  outline: none;
+  text-align:center;
 }
 
 body {
   margin: 0px;
+  padding: 0px;
+  background: linear-gradient(135deg, #9affd8, #c296ff);
+  background-size: cover;
+  height: 100vh
 }
 
 main {
@@ -93,6 +105,19 @@ table {
     background-color: rgba(255, 255, 255, 0);
   }
 
+
+/* INTRO PAGE */
+
+.intro-container {
+  border: 0px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 24px;
+  height: 50vh;
+  padding: 24px;
+}
+
+
 /* HOME PAGE */
 
 .addroom-main {
@@ -110,15 +135,15 @@ table {
 
 .addroom-h2 {
   margin-top: 0px;
+  margin-bottom: 24px;
   padding: 10px;
-  font-size: 100px;
+  font-size: 50px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
   color: rgb(67, 76, 48);
   outline: none;
-  text-align: center;
+  text-align:left;
 }
 
 .search{
@@ -204,8 +229,9 @@ gap: 10px;
 }
 
 .first-floor {
-width: 100%;
-max-width: 120px;
+width: 120px;
+height: 250px;
+overflow-y: scroll;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -222,8 +248,9 @@ user-select: none;
 }
 
 .second-floor {
-  width: 100%;
-  max-width: 120px;
+  width: 120px;
+  height: 250px;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -240,8 +267,9 @@ user-select: none;
   }
 
   .third-floor {
-    width: 100%;
-    max-width: 120px;
+    width: 120px;
+    height: 250px;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -258,8 +286,9 @@ user-select: none;
     }
 
     .fourth-floor {
-      width: 100%;
-      max-width: 120px;
+      width: 120px;
+      height: 250px;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -304,15 +333,15 @@ user-select: none;
 
 .latecheckout-h2 {
   margin-top: 0px;
+  margin-bottom: 24px;
   padding: 10px;
-  font-size: 100px;
+  font-size: 50px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
   color: rgb(67, 76, 48);
   outline: none;
-  text-align: center;
+  text-align: left;
 }
 
 .add-latecheckout {
@@ -426,15 +455,15 @@ position: relative;
 
 .newstayovers-h2 {
   margin-top: 0px;
+  margin-bottom: 24px;
   padding: 10px;
-  font-size: 100px;
+  font-size: 50px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
   color: rgb(67, 76, 48);
   outline: none;
-  text-align: center;
+  text-align: left;
 }
 
 .add-newstayovers {
@@ -537,16 +566,16 @@ background-image: url(images/check.png);
   }
     
   .noshows-h2 {
-    margin-top: 0px;
+    margin: 0px;
+    margin-bottom: 24px;
     padding: 10px;
-    font-size: 100px;
+    font-size: 50px;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
-    margin-bottom: 0.8rem;
     color: rgb(67, 76, 48);
     outline: none;
-    text-align: center;
+    text-align: left;
   }
 
 .add-noshows {
@@ -560,7 +589,7 @@ background-image: url(images/check.png);
 }
 
   .addnoshows-container {
-    margin: 0px 300px 0px;
+    margin: 0px 100px 0px;
     padding: 24px;
   }
   
@@ -661,22 +690,24 @@ li.noshows-checked::before {
   }
 
   .notes-h2 {
-    margin-top: 0px;
-    padding: 10px;
-    font-size: 100px;
+    margin: 0px 100px;
+    margin-bottom: 34px;
+    padding-top: 34px;
+    padding-left: 34px;
+    padding-right: 34px;
+    font-size: 50px;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
-    margin-bottom: 0.8rem;
     color: rgb(67, 76, 48);
     outline: none;
-    text-align: center;
+    text-align: left;
   }
     .addnotes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
-    margin: 24px;
-    padding: 24x;
+    margin: 24px 100px;
+    padding: 34px;
     gap: 24px;
 
   }
