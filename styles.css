@@ -13,7 +13,6 @@ main {
 }
 
 .date {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,7 +41,7 @@ nav {
 
 .navbar ul{
   list-style-type: none;
-  background-color: hsl(0, 0%, 29%);
+  background-color: hsl(180, 33%, 24%);
   padding: 0px;
   margin: 0px;
   overflow: hidden;
