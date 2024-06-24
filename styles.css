@@ -129,12 +129,16 @@ table {
 }
   
 .addroom-container {
-  margin: 0px 100px 0px;
-  padding: 24px;
+  margin: 0px 50px 0px;
+  padding: 20px 150px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 500px);
 }
 
 .addroom-h2 {
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 24px;
   padding: 10px;
   font-size: 50px;
@@ -149,11 +153,15 @@ table {
 .search{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
+  height: 25px;
+  justify-self: end;
+  align-self: center;
 }
 #searchinput-button {
   border: none;
@@ -162,20 +170,26 @@ table {
   background: none;
   padding: 10px;
   font-weight: 14px;
+  align-items: center;
+  width: 15px;
 }
 
 .search-button {
   border: none;
   outline: none;
-  padding: 16px 50px;
+  padding: 10px 30px;
   background: rgba(168, 204, 213, 0.433);
-  border-radius: 15px;
+  border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-button img {
-  max-width: 15px;
+  max-width: 18px;
 }
 
 .search-button:hover {
@@ -188,12 +202,14 @@ table {
 .add-room {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
-  margin-top: 40px;
+  justify-content: center;
+  width: 400px;
+  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
+  justify-self: center;
+  align-self: center;
 }
 
 #addroominput-button {
@@ -248,7 +264,7 @@ gap: 10px;
   display: flex;
   justify-content: center;
 width: 120px;
-height: 500px;
+height: 700px;
 overflow-y: scroll;
 background: #fff;
 padding: 0px 30px;
@@ -288,7 +304,7 @@ user-select: none;
   display: flex;
   justify-content: center;
 width: 120px;
-height: 500px;
+height: 700px;
 overflow-y: scroll;
 background: #fff;
 padding: 0px 30px;
@@ -328,9 +344,9 @@ user-select: none;
   display: flex;
   justify-content: center;
 width: 120px;
-height: 500px;
+height: 700px;
 overflow-y: scroll;
-background: #fff;
+background: #ffffff;
 padding: 0px 30px;
 border-radius: 30px;
 list-style: none;
@@ -368,7 +384,7 @@ user-select: none;
   display: flex;
   justify-content: center;
     width: 120px;
-    height: 500px;
+    height: 700px;
     overflow-y: scroll;
     background: #fff;
     padding: 0px 30px;
