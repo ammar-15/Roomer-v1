@@ -228,6 +228,22 @@ align-items:first baseline;
 gap: 10px;
 }
 
+::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#c296ff;
+  border-radius: 2px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 1.5em;
+}
+
 .first-floor {
 width: 120px;
 height: 250px;
