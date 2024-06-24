@@ -245,6 +245,8 @@ gap: 10px;
 }
 
 .first-floor {
+  display: flex;
+  justify-content: center;
 width: 120px;
 height: 500px;
 overflow-y: scroll;
@@ -272,7 +274,6 @@ user-select: none;
 .first-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 60px 0px;
   gap: 10px;
@@ -284,6 +285,8 @@ user-select: none;
 
 
 .second-floor {
+  display: flex;
+  justify-content: center;
 width: 120px;
 height: 500px;
 overflow-y: scroll;
@@ -311,7 +314,6 @@ user-select: none;
 .second-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 60px 0px;
   gap: 10px;
@@ -323,15 +325,17 @@ user-select: none;
 
 
 .third-floor {
-  width: 120px;
-  height: 500px;
-  overflow-y: scroll;
-  background: #fff;
-  padding: 0px 30px;
-  border-radius: 30px;
-  list-style: none;
-  cursor: pointer;
-  user-select: none;
+  display: flex;
+  justify-content: center;
+width: 120px;
+height: 500px;
+overflow-y: scroll;
+background: #fff;
+padding: 0px 30px;
+border-radius: 30px;
+list-style: none;
+cursor: pointer;
+user-select: none;
   }
   
   .third-header {
@@ -350,7 +354,6 @@ user-select: none;
   .third-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 60px 0px;
     gap: 10px;
@@ -362,6 +365,8 @@ user-select: none;
   
 
 .fourth-floor {
+  display: flex;
+  justify-content: center;
     width: 120px;
     height: 500px;
     overflow-y: scroll;
@@ -389,7 +394,6 @@ user-select: none;
 .fourth-content {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
       padding: 60px 0px;
       gap: 10px;
