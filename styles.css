@@ -493,14 +493,15 @@ user-select: none;
 .add-latecheckout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
-  width: 400px;
+  height: 25px;
+  justify-self: end;
   align-self: center;
-  justify-self: center;
 }
 
 .latecheckout-main {
@@ -538,11 +539,10 @@ user-select: none;
   border: none;
   flex: 1;
   outline: none;
+  width: 75px;
   background: none;
   padding: 10px;
   font-weight: 14px;
-  align-items: center;
-  width: 15px;
 }
 
 #latecheckout-time {
@@ -615,20 +615,66 @@ gap: 10px;
 padding: 0px;
 }
 
+.remove-latecheckout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  height: 25px;
+  justify-self: end;
+  align-self: center;
+}
+
+#removelatecheckoutinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+  align-items: center;
+  width: 35px;
+}
+
+.removelatecheckout-button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 28px;
+  font-size: 11px;
+  cursor: pointer;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removelatecheckout-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 11px;
+  transition: 400ms ease-in-out;
+}
+
 
 /* NEW STAYOVERS PAGE */
 
 .add-newstayovers {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
-  width: 400px;
+  height: 25px;
+  justify-self: end;
   align-self: center;
-  justify-self: center;
 }
 
 .newstayovers-main {
@@ -641,12 +687,12 @@ padding: 0px;
   
 .addnewstayovers-container {
   margin: 0px 100px 0px;
-  padding: 24px;
+  padding: 20px;
   display: grid;
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  grid-template-columns: repeat(auto-fill, 500px);
+  grid-template-columns: repeat(auto-fill, 300px);
 }
 
 .newstayovers-h2 {
@@ -662,12 +708,11 @@ padding: 0px;
   text-align: left;
 }
 
-
-
 #newstayoversinput-button {
   border: none;
   flex: 1;
   outline: none;
+  width: 75px;
   background: none;
   padding: 10px;
   font-weight: 14px;
@@ -676,11 +721,15 @@ padding: 0px;
 .newstayovers-button {
   border: none;
   outline: none;
-  padding: 16px 50px;
+  padding: 10px 30px;
   background: rgba(168, 204, 213, 0.433);
-  border-radius: 15px;
+  border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .newstayovers-button:hover {
@@ -739,7 +788,51 @@ font-weight: 100;
 
 li.newstayovers-checked::before {
 background-image: url(images/check.png);
+}
 
+.remove-newstayovers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  height: 25px;
+  justify-self: end;
+  align-self: center;
+}
+
+#removenewstayoversinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+  align-items: center;
+  width: 35px;
+}
+
+.removenewstayovers-button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 28px;
+  font-size: 11px;
+  cursor: pointer;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removenewstayovers-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 11px;
+  transition: 400ms ease-in-out;
 }
 
 /* NO SHOWS PAGE */
@@ -770,14 +863,15 @@ background-image: url(images/check.png);
 .add-noshows {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
-  width: 400px;
+  height: 25px;
+  justify-self: end;
   align-self: center;
-  justify-self: center;
 }
 
   .addnoshows-container {
@@ -787,13 +881,14 @@ background-image: url(images/check.png);
     justify-content: space-around;
     align-items: center;
     gap: 50px;
-    grid-template-columns: repeat(auto-fill, 500px);  
+    grid-template-columns: repeat(auto-fill, 300px);
   }
   
   #noshowsinput-button {
     border: none;
     flex: 1;
     outline: none;
+    width: 75px;
     background: none;
     padding: 10px;
     font-weight: 14px;
@@ -802,11 +897,15 @@ background-image: url(images/check.png);
   .noshows-button {
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px 30px;
     background: rgba(168, 204, 213, 0.433);
-    border-radius: 15px;
+    border-radius: 28px;
     font-size: 14px;
     cursor: pointer;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .noshows-button:hover {
@@ -865,7 +964,51 @@ li.noshows-checked {
 
 li.noshows-checked::before {
   background-image: url(images/check.png);
+}
 
+.remove-noshows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  height: 25px;
+  justify-self: end;
+  align-self: center;
+}
+
+#removenoshowsinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+  align-items: center;
+  width: 35px;
+}
+
+.removenoshows-button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 28px;
+  font-size: 11px;
+  cursor: pointer;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removenoshows-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 11px;
+  transition: 400ms ease-in-out;
 }
 
 /* NOTES PAGE */
