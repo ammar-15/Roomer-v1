@@ -518,7 +518,7 @@ user-select: none;
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  grid-template-columns: repeat(auto-fill, 500px);
+  grid-template-columns: repeat(auto-fill, 300px);
 }
 
 .latecheckout-h2 {
@@ -541,6 +541,8 @@ user-select: none;
   background: none;
   padding: 10px;
   font-weight: 14px;
+  align-items: center;
+  width: 15px;
 }
 
 #latecheckout-time {
@@ -563,11 +565,15 @@ user-select: none;
 .latecheckout-button {
   border: none;
   outline: none;
-  padding: 16px 50px;
+  padding: 10px 30px;
   background: rgba(168, 204, 213, 0.433);
-  border-radius: 15px;
+  border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .latecheckout-button:hover {
