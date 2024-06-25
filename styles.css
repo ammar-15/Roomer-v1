@@ -147,11 +147,11 @@ table {
   
 .addroom-container {
   margin: 0px 50px 0px;
-  padding: 20px 150px;
+  padding: 20px 50px;
   display: grid;
   justify-content: space-around;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, 500px);
+  grid-template-columns: repeat(auto-fill, 300px);
 }
 
 .addroom-h2 {
@@ -220,7 +220,7 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 200px;
   margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
@@ -233,6 +233,7 @@ table {
   border: none;
   flex: 1;
   outline: none;
+  width: 75px;
   background: none;
   padding: 10px;
   font-weight: 14px;
@@ -241,9 +242,12 @@ table {
 .addroom-button {
   border: none;
   outline: none;
+  display: flex;
+  justify-content:center;
   padding: 16px 50px;
   background: rgba(168, 204, 213, 0.433);
   border-radius: 15px;
+  width: 75px;
   font-size: 14px;
   cursor: pointer;
 }
@@ -251,6 +255,52 @@ table {
 .addroom-button:hover {
   background: rgba(0, 0, 0, 0.17);
   font-size: 14px;
+  transition: 400ms ease-in-out;
+}
+
+
+.remove-room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 20px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  height: 25px;
+  justify-self: end;
+  align-self: center;
+}
+
+#removeroominput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+  align-items: center;
+  width: 35px;
+}
+
+.removeroom-button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 28px;
+  font-size: 11px;
+  cursor: pointer;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.removeroom-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 11px;
   transition: 400ms ease-in-out;
 }
 
