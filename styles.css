@@ -1,11 +1,11 @@
 h1 {
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
   font-size: 50px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
   color: rgb(67, 76, 48);
   outline: none;
   text-align:center;
@@ -24,22 +24,39 @@ main {
   margin-right: 20px;
 }
 
-.date {
+.date-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-left: 500px;
+}
+
+.date {
+  display: flex;
+  padding: 10px;
+  height: 15px;
+  border-radius: 10px;
+  margin: 5px 500px;
+  background-color: #f1f7f9bf;
+  justify-content: center;
+  align-items: center;
+}
+
+.dailyData-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dailyData {
-  padding-top: 20px;
-  padding-right: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin: 0px 50px 0px;
+  padding: 20px;
+  display: grid;
+  justify-content: space-around;
   align-items: center;
-  
+  grid-template-columns: repeat(auto-fill, 500px);
+  background-color: #f1f1f9bf;
+  width: 1500px;
+  border-radius: 10px;
 }
 
 .dailyData > div {
