@@ -44,7 +44,7 @@ main {
 .dailyData-container {
   margin: 0px 70px 0px;
   padding: 20px 70px;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-self: center;
   grid-template-columns: repeat(auto-fill, 300px);
