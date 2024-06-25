@@ -431,6 +431,9 @@ user-select: none;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
+  width: 400px;
+  align-self: center;
+  justify-self: center;
 }
 
 .latecheckout-main {
@@ -443,11 +446,16 @@ user-select: none;
   
 .addlatecheckout-container {
   margin: 0px 100px 0px;
-  padding: 24px;
+  padding: 20px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fill, 500px);
 }
 
 .latecheckout-h2 {
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 24px;
   padding: 10px;
   font-size: 50px;
@@ -457,16 +465,6 @@ user-select: none;
   color: rgb(67, 76, 48);
   outline: none;
   text-align: left;
-}
-
-.add-latecheckout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
-  background: #ffffff9c;
-  border-radius: 30px;
-  padding: 20px;
 }
 
 #latecheckoutinput-button {
@@ -515,44 +513,49 @@ user-select: none;
 display: flex;
 justify-content: center; 
 align-items: center; 
+padding: 0px;
 }
 
 .latecheckout-list {
-width: 100%;
-max-width: 300px;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
-align-items: center;
+justify-content: flex-start;
+width: 200px;
+height: 300px;
+overflow-y: scroll;
 background: #fff;
+padding: 20px 30px; 
 gap: 10px;
 font-size: large;
-padding: 30px;
 border-radius: 30px;
 list-style: none;
 cursor: pointer;
 user-select: none;
-
+align-items: center;
 }
 
 .latecheckout-list li {
 display: flex;
-align-items: center;
+align-self: center;
+justify-self: center;
 gap: 10px;
-position: relative;
+padding: 0px;
 }
 
 
 /* NEW STAYOVERS PAGE */
 
 .add-newstayovers {
-  padding: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
+  justify-content: space-between;
+  margin: 0px 200px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  width: 400px;
+  align-self: center;
+  justify-self: center;
 }
 
 .newstayovers-main {
@@ -566,10 +569,15 @@ position: relative;
 .addnewstayovers-container {
   margin: 0px 100px 0px;
   padding: 24px;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fill, 500px);
 }
 
 .newstayovers-h2 {
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 24px;
   padding: 10px;
   font-size: 50px;
@@ -581,15 +589,7 @@ position: relative;
   text-align: left;
 }
 
-.add-newstayovers {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0px 200px;
-  background: #ffffff9c;
-  border-radius: 30px;
-  padding-left: 20px;
-}
+
 
 #newstayoversinput-button {
   border: none;
@@ -620,25 +620,26 @@ position: relative;
 display: flex;
 justify-content: center; 
 align-items: center; 
+padding: 0px;
 }
 
 
 .newstayovers-list {
-width: 100%;
-max-width: 300px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-background: #fff;
-gap: 10px;
-font-size: large;
-padding: 30px;
-border-radius: 30px;
-list-style: none;
-cursor: pointer;
-user-select: none;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 200px;
+  height: 300px;
+  overflow-y: scroll;
+  background: #fff;
+  padding: 20px 30px; 
+  gap: 10px;
+  font-size: large;
+  border-radius: 30px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
 }
 
 .newstayovers-list li {
@@ -681,7 +682,7 @@ background-image: url(images/check.png);
   }
     
   .noshows-h2 {
-    margin: 0px;
+    margin-top: 20px;
     margin-bottom: 24px;
     padding: 10px;
     font-size: 50px;
@@ -694,29 +695,28 @@ background-image: url(images/check.png);
   }
 
 .add-noshows {
-  padding: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 10px;
-  border-radius: 10px;
-  border-color: aqua;
+  justify-content: space-between;
+  margin: 0px 200px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  width: 400px;
+  align-self: center;
+  justify-self: center;
 }
 
   .addnoshows-container {
     margin: 0px 100px 0px;
-    padding: 24px;
+    padding: 20px;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, 500px);  
   }
   
-  .add-noshows {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #ffffff9c;
-    border-radius: 30px;
-    padding-left: 20px;
-  }
-
   #noshowsinput-button {
     border: none;
     flex: 1;
@@ -746,33 +746,34 @@ background-image: url(images/check.png);
   display: flex;
   justify-content: center; 
   align-items: center; 
+  padding: 0px;
 }
 
 
 .noshows-list {
-  width: 100%;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+  height: 300px;
+  overflow-y: scroll;
   background: #fff;
+  padding: 20px 30px; 
   gap: 10px;
   font-size: large;
-  padding: 30px;
   border-radius: 30px;
   list-style: none;
   cursor: pointer;
   user-select: none;
-
+  align-items: center;
 }
 
 .noshows-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  font-weight: 600;
+display: flex;
+align-self: center;
+justify-self: center;
+gap: 10px;
+padding: 0px;
 }
 
 .noshows-list li::before {
