@@ -176,7 +176,7 @@ main {
   display: grid;
   justify-content: space-around;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(4, 200px);
 }
 
 .addroom-h2 {
@@ -544,7 +544,7 @@ user-select: none;
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(3, 200px);
 }
 
 .latecheckout-h2 {
@@ -717,7 +717,7 @@ padding: 0px;
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(3, 200px);
 }
 
 .newstayovers-h2 {
@@ -906,7 +906,7 @@ background-image: url(images/check.png);
     justify-content: space-around;
     align-items: center;
     gap: 50px;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(3, 200px);
   }
   
   #noshowsinput-button {
