@@ -65,13 +65,15 @@ main {
 
 .sidenav {
   width: 250px;
-  height: 600px;
-  position: fixed;
+  height: 400px;
+  position: sticky;
   top: 0;
   left: 0;
   padding: 30px 15px;
   background: rgba(158, 197, 255, 0.527);
   backdrop-filter: blur(5px);
+  z-index: 9;
+  
 }
 
 .user {
@@ -168,6 +170,7 @@ main {
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
   height: 100vh;
+  position: relative;
 }
   
 .addroom-container {
