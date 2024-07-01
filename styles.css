@@ -67,6 +67,8 @@ main {
   width: 250px;
   height: 600px;
   position: fixed;
+  height: 600px;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 30px 15px;
