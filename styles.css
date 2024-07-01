@@ -65,8 +65,8 @@ main {
 
 .sidenav {
   width: 250px;
-  height: 400px;
-  position: sticky;
+  height: 600px;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 30px 15px;
@@ -170,7 +170,6 @@ main {
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
   height: 100vh;
-  position: relative;
 }
   
 .addroom-container {
