@@ -16,7 +16,7 @@ body {
   padding: 0px;
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
-  height: 100%;
+  height: 100vh;
 }
 
 main {
@@ -64,7 +64,7 @@ main {
 }
 
 .sidenav {
-  width: 170px;
+  width: 150px;
   height: 340px;
   position: fixed;
   border-radius: 0px 30px 30px 0px;
@@ -169,7 +169,7 @@ main {
   padding: 0px;
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
-  height: 68.3vh;
+  height: 75%;
 }
   
 .addroom-container {
@@ -536,7 +536,7 @@ user-select: none;
   padding: 0px;
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
-  height: 68.3vh;
+  height: 75%;
 }
   
 .addlatecheckout-container {
@@ -709,7 +709,7 @@ padding: 0px;
   padding: 0px;
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
-  height: 68.3vh;
+  height: 75%;
 }
   
 .addnewstayovers-container {
@@ -871,7 +871,7 @@ background-image: url(images/check.png);
     padding: 0px;
     background: linear-gradient(135deg, #9affd8, #c296ff);
     background-size: cover;
-    height: 68.3vh;
+    height: 75%;
   }
     
   .noshows-h2 {
@@ -1045,11 +1045,20 @@ li.noshows-checked::before {
     padding: 0px;
     background: linear-gradient(135deg, #bcff9a, #96c0ff);
     background-size: cover;
-    height: 68.3vh;
+    height: 75%;
+  }
+
+  .noteheader-container{
+    display:grid;
+    grid-template-columns: repeat(2, 700px);
+    align-items:center;
+    justify-content: space-between;
+    margin: 0px 80px;
+  
   }
 
   .notes-h2 {
-    margin: 0px 100px;
+    margin: 0px 20px;
     margin-bottom: 34px;
     padding-top: 34px;
     padding-left: 34px;
@@ -1062,6 +1071,56 @@ li.noshows-checked::before {
     outline: none;
     text-align: left;
   }
+
+.search-note{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 200px;
+  margin: 0px 20px;
+  background: #ffffff9c;
+  border-radius: 30px;
+  padding: 20px;
+  height: 25px;
+  justify-self: center;
+  align-self: center;
+}
+#searchnoteinput-button {
+  border: none;
+  flex: 1;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-weight: 14px;
+  align-items: center;
+  width: 15px;
+}
+
+.searchnote-button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  background: rgba(168, 204, 213, 0.433);
+  border-radius: 28px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchnote-button img {
+  max-width: 18px;
+}
+
+.searchnote-button:hover {
+  background: rgba(0, 0, 0, 0.17);
+  font-size: 14px;
+  transition: 400ms ease-in-out;
+}  
+
+
     .addnotes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
