@@ -17,7 +17,15 @@ body {
   background: linear-gradient(135deg, #9affd8, #c296ff);
   background-size: cover;
   height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 main {
   margin-left: 20px;
@@ -35,10 +43,24 @@ main {
   padding: 10px;
   height: 15px;
   border-radius: 10px;
-  margin: 5px 500px;
+  margin: 5px 5px;
   background-color: #f1f7f9bf;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
+
+}
+
+.time {
+  display: flex;
+  padding: 10px;
+  height: 15px;
+  border-radius: 10px;
+  margin: 5px 5px;
+  background-color: #f1f7f9bf;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 
 .dailyData-container {
@@ -68,7 +90,7 @@ main {
   height: 340px;
   position: fixed;
   border-radius: 0px 30px 30px 0px;
-  top: 336px;
+  top: 346px;
   left: 0;
   padding: 30px 15px;
   background: rgba(158, 197, 255, 0.527);
@@ -378,14 +400,19 @@ user-select: none;
   font-size: large;
   color: #000000;
   background-color: #ffff;
-}
+  border-radius: 15px 15px 0px 0px;
 
+}
+.firstfloor-h{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .first-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0px;
+  padding: 70px 0px;
   gap: 10px;
   font-size: large;
   list-style: none;
@@ -418,14 +445,19 @@ user-select: none;
   font-size: large;
   color: #000000;
   background-color: #ffff;
-}
+ border-radius: 15px 15px 0px 0px;
 
+}
+.secondfloor-h{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .second-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0px;
+  padding: 70px 0px;
   gap: 10px;
   font-size: large;
   list-style: none;
@@ -458,14 +490,19 @@ user-select: none;
     font-size: large;
     color: #000000;
     background-color: #ffff;
+    border-radius: 15px 15px 0px 0px;
   }
-  
+
+  .thirdfloor-h{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
   
   .third-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0px;
+    padding: 70px 0px;
     gap: 10px;
     font-size: large;
     list-style: none;
@@ -498,14 +535,19 @@ user-select: none;
       font-size: large;
       color: #000000;
       background-color: #ffff;
-}
-    
+      border-radius: 15px 15px 0px 0px;
+    }
+  
+    .fourthfloor-h{
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
     
 .fourth-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 60px 0px;
+      padding: 70px 0px;
       gap: 10px;
       font-size: large;
       list-style: none;
