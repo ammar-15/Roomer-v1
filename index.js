@@ -49,8 +49,13 @@ setInterval(() => {
 
 // NOTES PAGE //
 
-const notesContainer = document.getElementById(".addnotes-container")
+const notesContainer = document.querySelector(".addnotes-container")
 const addNoteButton = notesContainer.querySelector(".add-notes")
+
+getNotes().forEach(note => {
+    const noteElement = createNoteElement(note.id. note.content);
+    notesContainer.insertBefore(noteElement, addNoteButton);
+});
 
 //Retrieves existing notes from local storage to client browser//
 function getNotes() {
@@ -72,13 +77,13 @@ function createNoteElement(id, content) {
         updateNote(id, element.value);
     });
 
-    element.addEventListener("trplclick", () => {
+    element.addEventListener("dblclick", () => {
         const doDelete = confirm("Are you sure you wish to delete this note?")
-    })
-
-    if (doDelete) {
-        
-    }
+    
+        if (doDelete) {
+            deleteNote(id, element);        
+        }
+    });
 
     return element;
 }
@@ -88,12 +93,13 @@ function addNote() {
 
 }
 //Updates notes//
-function updateNote() {
+function updateNote(id, newContent) {
     console.log("Updating note....");
     console.log(id, newContent);
 }
 
 //Deletes notes//
-function deleteNote() {
-
+function deleteNote(id, newContent) {
+    console.log("Deleting note....");
+    console.log(id, newContent);
 }
