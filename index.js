@@ -76,6 +76,9 @@ function createNoteElement(id, content) {
         const doDelete = confirm("Are you sure you wish to delete this note?")
     })
 
+    if (doDelete) {
+        
+    }
 
     return element;
 }
