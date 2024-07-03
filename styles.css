@@ -1187,7 +1187,7 @@ li.noshows-checked::before {
   .add-notes:hover {
     background: rgba(0, 0, 0, 0.17);
     font-variation-settings: "wght" 582; 
-    font-size: 160px;
+    font-size: 140px;
     transition: 0.2s ease-in;
   }
 
