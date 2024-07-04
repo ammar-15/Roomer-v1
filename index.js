@@ -124,3 +124,5 @@ function deleteNote(id, element) {
     saveNotes(notes);
     notesContainer.removeChild(element);
 }
+
+//bro im so confused//
