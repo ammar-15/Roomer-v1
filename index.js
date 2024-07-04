@@ -53,9 +53,12 @@ const notesContainer = document.querySelector(".addnotes-container")
 const addNoteButton = notesContainer.querySelector(".add-notes")
 
 getNotes().forEach(note => {
-    const noteElement = createNoteElement(note.id. note.content);
+    const noteElement = createNoteElement(note.id, note.content);
     notesContainer.insertBefore(noteElement, addNoteButton);
 });
+
+//Making add button work//
+addNoteButton.addEventListener("click", () => addNote());
 
 //Retrieves existing notes from local storage to client browser//
 function getNotes() {
@@ -90,16 +93,34 @@ function createNoteElement(id, content) {
 
 //Adds new note and saves to local storage//
 function addNote() {
+    const notes = getNotes();
+    const noteObject = {
+        id: Math.floor(Math.random() * 100000),
+        content: ""
+    };
+    const noteElement = createNoteElement(noteObject.id, noteObject.content);
+    notesContainer.insertBefore(noteElement, addNoteButton);
 
+    notes.push(noteObject);
+    saveNotes(notes);
 }
 //Updates notes//
 function updateNote(id, newContent) {
     console.log("Updating note....");
     console.log(id, newContent);
+    const notes = getNotes();
+    const targetNote = notes.filter(note => note.id == id) [0];
+
+    targetNote.content = newContent;
+    saveNotes(notes);
 }
 
 //Deletes notes//
-function deleteNote(id, newContent) {
+function deleteNote(id, element) {
     console.log("Deleting note....");
-    console.log(id, newContent);
+    console.log(id);
+    const notes = getNotes().filter(note => note.id != id);
+
+    saveNotes(notes);
+    notesContainer.removeChild(element);
 }
