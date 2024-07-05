@@ -124,3 +124,9 @@ function deleteNote(id, element) {
     saveNotes(notes);
     notesContainer.removeChild(element);
 }
+
+//Search Note//
+const search = ()=> {
+    const searchbox = document.getElementById("searchnoteinput-button");
+    const storeItems = 
+}
