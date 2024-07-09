@@ -86,6 +86,21 @@ main {
   gap: 20px;
 }
 
+#inhouse-input {
+  border: 0;
+  background-color: transparent;
+}
+
+#totalstayovers-input {
+  border: 0;
+  background-color: transparent;
+}
+
+#totalcheckouts-input {
+  border: 0;
+  background-color: transparent;
+}
+
 .sidenav {
   width: 150px;
   height: 340px;

@@ -27,6 +27,40 @@ setInterval(() => {
     dateElement.textContent = formatDate(now);
 }, 200)
 
+
+// DAILY DATA //
+
+const dailyDataContainer = document.querySelector(".dailyData");
+const inhouseInput = document.getElementById("inhouse-input");
+const stayoversInput = document.getElementById("totalstayovers-input");
+const checkoutsInput = document.getElementById("totalcheckouts-input");
+
+// Load existing data from local storage
+loadDailyData();
+
+// Add event listeners to hold data in input field //
+inhouseInput.addEventListener("blur", () => saveDailyData("inhouse", inhouseInput.value));
+stayoversInput.addEventListener("blur", () => saveDailyData("stayovers", stayoversInput.value));
+checkoutsInput.addEventListener("blur", () => saveDailyData("checkouts", checkoutsInput.value));
+
+// Loading data from local storage //
+function loadDailyData() {
+    const inhouse = localStorage.getItem("dailyData-inhouse") || "";
+    const stayovers = localStorage.getItem("dailyData-stayovers") || "";
+    const checkouts = localStorage.getItem("dailyData-checkouts") || "";
+
+    inhouseInput.value = inhouse;
+    stayoversInput.value = stayovers;
+    checkoutsInput.value = checkouts;
+}
+
+// Saving data to local storage //
+function saveDailyData(key, value) {
+    localStorage.setItem(`dailyData-${key}`, value);
+}
+
+
+
 // INTRO PAGE //
 
 
