@@ -100,7 +100,7 @@ main {
   border: 0;
   background-color: transparent;
 }
-
+/*
 .sidenav {
   width: 150px;
   height: 340px;
@@ -156,6 +156,7 @@ main {
 .sidenav ul li p {
   white-space: nowrap;
 }
+*/
 
 .navbar {
   margin-top: 40px;
