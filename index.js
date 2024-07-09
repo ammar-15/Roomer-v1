@@ -126,7 +126,24 @@ function deleteNote(id, element) {
 }
 
 //Search Note//
-const search = ()=> {
-    const searchbox = document.getElementById("searchnoteinput-button");
-    const storeItems = 
+const search = () => {
+    const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
+    const notesSection = document.querySelector("addnotes-container");
+    const existingNotes = document.querySelectorAll(".note");
+    const noteName = notesSection.getElementsByTagName('textarea');
+
+    for (var i=0; i< noteName.length; i++) {
+        let match = existingNotes[i].getElementsByTagName("textarea")[0];
+
+        if(match) {
+            let textvalue = match.textContent || match.innerHTML
+
+            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+                existingNotes[i].style.display = "";
+            }else{
+                existingNotes[i].style.display = "none";
+            }
+        }
+    }
+
 }
