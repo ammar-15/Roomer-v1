@@ -14,12 +14,11 @@
     </head>
     <body>
         <h1>Housekeeping Checkout Sheet</h1>
-        <div class="sidenav">
+        <!-- <div class="sidenav">
             <div class="user">
                 <img src="/images/user.png" class="user-img">
                 <h3 class="username">User Name</h3>
             </div>
-        
         <ul>
             <li><img src="/images/homeicon.png"><p>Home</p></li>
             <li><img src="/images/deleteall.png"><p>Reset</p></li>
@@ -27,7 +26,7 @@
         <ul>
             <li><img src="/images/logout.png"><p>Log Out</p></li>
         </ul>
-        </div>
+        </div> -->
         <div class="date-container">
             <div class="time"></div>
             <div class="date"></div>
@@ -60,7 +59,7 @@
             <h2 class="noshows-h2">No Shows</h2>
             <div class="add-noshows">
                 <input type="text" id="noshowsinput-button" placeholder="Add room">
-                <button class ="noshows-button">Add</button>
+                <button class ="noshows-button" onclick="addRoomNS()">Add</button>
             </div>
             <div class="remove-noshows">
                 <input type="text" id="removenoshowsinput-button" placeholder="Remove room">
@@ -69,12 +68,12 @@
         </div>
         <div class="no-shows">
             <ul class="noshows-list">
-                    <li class="noshows-checked"><input type="checkbox">411</li>
+                    <!--<li><input type="checkbox">411</li>
                     <li><input type="checkbox">219</li>
                     <li><input type="checkbox">317</li>
                     <li><input type="checkbox">132</li>
                     <li><input type="checkbox">342</li>
-                    <li><input type="checkbox">442</li>
+                    <li><input type="checkbox">442</li>-->
             </ul>
         </div>
     </main>

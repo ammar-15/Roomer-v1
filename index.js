@@ -79,6 +79,24 @@ function saveDailyData(key, value) {
 
 // NO SHOWS //
 
+const inputBoxNS = document.getElementById("noshowsinput-button");
+const listContainerNS = document.querySelector(".noshows-list");
+
+function addRoomNS() {
+    if (inputBoxNS.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox"> ${inputBoxNS.value}`;
+        listContainerNS.appendChild(li);
+        let span = document.createElement("span");
+        span.innerhtml = `x`;
+        console.log(span.innerHTML);
+        li.appendChild(span);
+    }
+    inputBoxNS.value="";
+}
 
 
 // NOTES PAGE //
@@ -162,20 +180,18 @@ function deleteNote(id, element) {
 //Search Note//
 const search = () => {
     const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
-    const notesSection = document.querySelector("addnotes-container");
-    const existingNotes = document.querySelectorAll(".note");
-    const noteName = notesSection.getElementsByTagName('textarea');
+    const allNotes = document.querySelectorAll(".note");
 
-    for (var i=0; i< noteName.length; i++) {
-        let match = existingNotes[i].getElementsByTagName("textarea")[0];
-
+    for (var i=0; i< allNotes.length; i++) {
+        let match = allNotes[i];
         if(match) {
-            let textvalue = match.textContent || match.innerHTML
+            let textvalue = match.value || match.textContent;
 
             if(textvalue.toUpperCase().indexOf(searchbox) > -1){
-                existingNotes[i].style.display = "";
-            }else{
-                existingNotes[i].style.display = "none";
+                allNotes[i].style.display = "";
+            }
+            else{
+                allNotes[i].style.display = "none";
             }
         }
     }
