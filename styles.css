@@ -852,28 +852,14 @@ padding: 0px;
 
 .newstayovers-list li {
 display: flex;
-align-items: center;
+align-self: center;
 gap: 10px;
 position: relative;
 font-weight: 600;
 }
 
-.newstayovers-list li::before {
-content: '';
-height: 28px;
-width: 28px;
-border-radius: 50%;
-background-image: url(images/uncheck.png);
-background-size: cover;
-background-position: center;
-}
-
-li.newstayovers-checked {
-font-weight: 100;
-}
-
-li.newstayovers-checked::before {
-background-image: url(images/check.png);
+.newstayovers-list li input {
+  transform: scale(2);
 }
 
 .remove-newstayovers {
@@ -1034,13 +1020,8 @@ gap: 10px;
 padding: 0px;
 }
 
-.noshows-list li::before {
-  content: '';
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
+.noshows-list li input {
+  transform: scale(2);
 }
 
 .remove-noshows {
