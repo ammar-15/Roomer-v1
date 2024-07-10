@@ -79,6 +79,24 @@ function saveDailyData(key, value) {
 
 // NO SHOWS //
 
+const inputBoxNS = document.getElementById("noshowsinput-button");
+const listContainerNS = document.querySelector(".noshows-list");
+
+function addRoomNS() {
+    if (inputBoxNS.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox"> ${inputBoxNS.value}`;
+        listContainerNS.appendChild(li);
+        let span = document.createElement("span");
+        span.innerhtml = `x`;
+        console.log(span.innerHTML);
+        li.appendChild(span);
+    }
+    inputBoxNS.value="";
+}
 
 
 // NOTES PAGE //
