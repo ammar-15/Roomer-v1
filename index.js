@@ -71,10 +71,52 @@ function saveDailyData(key, value) {
 
 // LATE CHECK OUTS //
 
+const inputBoxLC = document.getElementById("latecheckoutinput-button");
+const listContainerLC = document.querySelector(".latecheckout-list");
 
+function addRoomLC() {
+    if (inputBoxLC.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value}`;
+        listContainerLC.appendChild(li);
+    }
+    inputBoxLC.value="";
+}
+
+
+function removeRoomLC() {
+    let removeBoxLC = document.getElementById("removelatecheckoutinput-button").value;
+    // console.log(removeBoxLC);
+    if (removeBoxLC.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerLC.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxLC);
+                if(textvalue === removeBoxLC) {
+                    listContainerLC.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxLC=""; //does not override the input box for some reason?
+            console.log(removeBoxLC); 
+        }
+    }
+}
 
 // NEW STAYOVERS //
-
 
 const inputBoxNStay = document.getElementById("newstayoversinput-button");
 const listContainerNStay = document.querySelector(".newstayovers-list");
