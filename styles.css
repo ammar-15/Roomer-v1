@@ -701,6 +701,10 @@ gap: 10px;
 padding: 0px;
 }
 
+.latecheckout-list li input {
+  transform: scale(2);
+}
+
 .remove-latecheckout {
   display: flex;
   align-items: center;

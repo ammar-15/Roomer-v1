@@ -71,11 +71,97 @@ function saveDailyData(key, value) {
 
 // LATE CHECK OUTS //
 
+const inputBoxLC = document.getElementById("latecheckoutinput-button");
+const listContainerLC = document.querySelector(".latecheckout-list");
 
+function addRoomLC() {
+    if (inputBoxLC.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value}`;
+        listContainerLC.appendChild(li);
+    }
+    inputBoxLC.value="";
+}
+
+
+function removeRoomLC() {
+    let removeBoxLC = document.getElementById("removelatecheckoutinput-button").value;
+    // console.log(removeBoxLC);
+    if (removeBoxLC.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerLC.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxLC);
+                if(textvalue === removeBoxLC) {
+                    listContainerLC.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxLC=""; //does not override the input box for some reason?
+            console.log(removeBoxLC); 
+        }
+    }
+}
 
 // NEW STAYOVERS //
 
+const inputBoxNStay = document.getElementById("newstayoversinput-button");
+const listContainerNStay = document.querySelector(".newstayovers-list");
 
+function addRoomNStay() {
+    if (inputBoxNStay.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox">${inputBoxNStay.value}`;
+        listContainerNStay.appendChild(li);
+    }
+    inputBoxNStay.value="";
+}
+
+
+function removeRoomNStay() {
+    let removeBoxNStay = document.getElementById("removenewstayoversinput-button").value;
+    // console.log(removeBoxNStay);
+    if (removeBoxNStay.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerNStay.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxNStay);
+                if(textvalue === removeBoxNStay) {
+                    listContainerNStay.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxNStay=""; //does not override the input box for some reason?
+            console.log(removeBoxNStay); 
+        }
+    }
+}
 
 // NO SHOWS //
 
@@ -88,14 +174,40 @@ function addRoomNS() {
     }
     else{
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox"> ${inputBoxNS.value}`;
+        li.innerHTML = `<input type= "checkbox">${inputBoxNS.value}`;
         listContainerNS.appendChild(li);
-        let span = document.createElement("span");
-        span.innerhtml = `x`;
-        console.log(span.innerHTML);
-        li.appendChild(span);
     }
     inputBoxNS.value="";
+}
+
+
+function removeRoomNS() {
+    let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    // console.log(removeBoxNS);
+    if (removeBoxNS.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerNS.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxNS);
+                if(textvalue === removeBoxNS) {
+                    listContainerNS.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxNS=""; //does not override the input box for some reason?
+            console.log(removeBoxNS); 
+        }
+    }
 }
 
 
