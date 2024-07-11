@@ -73,14 +73,16 @@ function saveDailyData(key, value) {
 
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
-
+const timeOption = document.getElementById("latecheckout-time"); 
+console.log(timeOption);
+console.log(timeOption.value);
 function addRoomLC() {
     if (inputBoxLC.value === ""){
         alert("Please enter a room");
     }
     else{
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value}`;
+        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value} - ${timeOption.value}`;
         listContainerLC.appendChild(li);
     }
     inputBoxLC.value="";
