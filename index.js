@@ -74,7 +74,7 @@ function saveDailyData(key, value) {
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time"); 
-console.log(timeOption.value);
+//console.log(timeOption.value);
 function addRoomLC() {
     if (inputBoxLC.value === ""){
         alert("Please enter a room");
@@ -181,6 +181,9 @@ function addRoomNS() {
     inputBoxNS.value="";
 }
 
+function saveNS(){
+    localStorage.setItem("data", l)
+}
 
 function removeRoomNS() {
     let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
@@ -259,6 +262,7 @@ function createNoteElement(id, content) {
 
 //Adds new note and saves to local storage//
 function addNote() {
+    console.log("add initialized");
     const notes = getNotes();
     const noteObject = {
         id: Math.floor(Math.random() * 100000),
@@ -292,22 +296,22 @@ function deleteNote(id, element) {
 }
 
 //Search Note//
-const search = () => {
-    const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
-    const allNotes = document.querySelectorAll(".note");
+// const search = () => {
+//     const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
+//     const allNotes = document.querySelectorAll(".note");
 
-    for (var i=0; i< allNotes.length; i++) {
-        let match = allNotes[i];
-        if(match) {
-            let textvalue = match.value || match.textContent;
+//     for (var i=0; i< allNotes.length; i++) {
+//         let match = allNotes[i];
+//         if(match) {
+//             let textvalue = match.value || match.textContent;
 
-            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
-                allNotes[i].style.display = "";
-            }
-            else{
-                allNotes[i].style.display = "none";
-            }
-        }
-    }
+//             if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+//                 allNotes[i].style.display = "";
+//             }
+//             else{
+//                 allNotes[i].style.display = "none";
+//             }
+//         }
+//     }
 
-}
+// }
