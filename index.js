@@ -74,7 +74,6 @@ function saveDailyData(key, value) {
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time"); 
-console.log(timeOption);
 console.log(timeOption.value);
 function addRoomLC() {
     if (inputBoxLC.value === ""){
@@ -91,6 +90,7 @@ function addRoomLC() {
 
 function removeRoomLC() {
     let removeBoxLC = document.getElementById("removelatecheckoutinput-button").value;
+    const listContainerLC = document.querySelector(".latecheckout-list");
     // console.log(removeBoxLC);
     if (removeBoxLC.value === "") {
         alert("Please enter a room");
@@ -120,10 +120,9 @@ function removeRoomLC() {
 
 // NEW STAYOVERS //
 
-const inputBoxNStay = document.getElementById("newstayoversinput-button");
-const listContainerNStay = document.querySelector(".newstayovers-list");
-
 function addRoomNStay() {
+    const inputBoxNStay = document.getElementById("newstayoversinput-button");
+    const listContainerNStay = document.querySelector(".newstayovers-list");
     if (inputBoxNStay.value === ""){
         alert("Please enter a room");
     }
@@ -138,6 +137,7 @@ function addRoomNStay() {
 
 function removeRoomNStay() {
     let removeBoxNStay = document.getElementById("removenewstayoversinput-button").value;
+    const listContainerNStay = document.querySelector(".newstayovers-list");
     // console.log(removeBoxNStay);
     if (removeBoxNStay.value === "") {
         alert("Please enter a room");
@@ -167,10 +167,9 @@ function removeRoomNStay() {
 
 // NO SHOWS //
 
-const inputBoxNS = document.getElementById("noshowsinput-button");
-const listContainerNS = document.querySelector(".noshows-list");
-
 function addRoomNS() {
+    const inputBoxNS = document.getElementById("noshowsinput-button");
+    const listContainerNS = document.querySelector(".noshows-list");
     if (inputBoxNS.value === ""){
         alert("Please enter a room");
     }
@@ -185,6 +184,7 @@ function addRoomNS() {
 
 function removeRoomNS() {
     let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    const listContainerNS = document.querySelector(".noshows-list");
     // console.log(removeBoxNS);
     if (removeBoxNS.value === "") {
         alert("Please enter a room");
