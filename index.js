@@ -76,6 +76,50 @@ function saveDailyData(key, value) {
 // NEW STAYOVERS //
 
 
+const inputBoxNStay = document.getElementById("newstayoversinput-button");
+const listContainerNStay = document.querySelector(".newstayovers-list");
+
+function addRoomNStay() {
+    if (inputBoxNStay.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox">${inputBoxNStay.value}`;
+        listContainerNStay.appendChild(li);
+    }
+    inputBoxNStay.value="";
+}
+
+
+function removeRoomNStay() {
+    let removeBoxNStay = document.getElementById("removenewstayoversinput-button").value;
+    // console.log(removeBoxNStay);
+    if (removeBoxNStay.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerNStay.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxNStay);
+                if(textvalue === removeBoxNStay) {
+                    listContainerNStay.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxNStay=""; //does not override the input box for some reason?
+            console.log(removeBoxNStay); 
+        }
+    }
+}
 
 // NO SHOWS //
 
