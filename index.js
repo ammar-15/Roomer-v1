@@ -88,14 +88,40 @@ function addRoomNS() {
     }
     else{
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox"> ${inputBoxNS.value}`;
+        li.innerHTML = `<input type= "checkbox">${inputBoxNS.value}`;
         listContainerNS.appendChild(li);
-        let span = document.createElement("span");
-        span.innerhtml = `x`;
-        console.log(span.innerHTML);
-        li.appendChild(span);
     }
     inputBoxNS.value="";
+}
+
+
+function removeRoomNS() {
+    const removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    console.log(removeBoxNS);
+    if (removeBoxNS.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerNS.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                console.log(match);
+                console.log(textvalue);
+                console.log(removeBoxNS);
+                if(textvalue === removeBoxNS) {
+                    listContainerNS.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxNS.value="";
+        }
+    }
+    
 }
 
 
