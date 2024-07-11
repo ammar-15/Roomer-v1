@@ -96,8 +96,8 @@ function addRoomNS() {
 
 
 function removeRoomNS() {
-    const removeBoxNS = document.getElementById("removenoshowsinput-button").value;
-    console.log(removeBoxNS);
+    let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    // console.log(removeBoxNS);
     if (removeBoxNS.value === "") {
         alert("Please enter a room");
     }
@@ -105,12 +105,12 @@ function removeRoomNS() {
         let removeLi = listContainerNS.getElementsByTagName("li");
         for (var i=0; i< removeLi.length; i++) {
             let match = removeLi[i];
-            console.log(match.textContent);
+            // console.log(match.textContent);
             if(match) {
                 let textvalue = match.value || match.textContent || match.innerHTML;
-                console.log(match);
-                console.log(textvalue);
-                console.log(removeBoxNS);
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxNS);
                 if(textvalue === removeBoxNS) {
                     listContainerNS.removeChild(match);
                 }
@@ -118,10 +118,10 @@ function removeRoomNS() {
             else{
                 alert("Room does not exist");
             }
-            removeBoxNS.value="";
+            removeBoxNS=""; //does not override the input box for some reason?
+            console.log(removeBoxNS); 
         }
     }
-    
 }
 
 
