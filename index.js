@@ -80,25 +80,46 @@ function addRoom() {
     }
     else{
         if (inputBox.value > 100 && inputBox.value < 199){
-        let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBox.value}`;
-        firstFloorList.appendChild(li);}
+            let li = document.createElement("li");
+            li.innerHTML = `${inputBox.value}`;
+            firstFloorList.appendChild(li);
+        }
+        else if (inputBox.value > 200 && inputBox.value < 299){
+            let li = document.createElement("li");
+            li.innerHTML = `${inputBox.value}`;
+            secondFloorList.appendChild(li);
+        }
+        else if (inputBox.value > 300 && inputBox.value < 399){
+            let li = document.createElement("li");
+            li.innerHTML = `${inputBox.value}`;
+            thirdFloorList.appendChild(li);
+        }
+        else if (inputBox.value > 400 && inputBox.value < 499){
+            let li = document.createElement("li");
+            li.innerHTML = `${inputBox.value}`;
+            fourthFloorList.appendChild(li);
+        }
+
+
     }
-    inputBoxNS.value="";
+    inputBox.value="";
 }
 
 function saveNS(){
     localStorage.setItem("data", l)
 }
 
-function removeRoomNS() {
-    let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
-    const listContainerNS = document.querySelector(".noshows-list");
-    // console.log(removeBoxNS);
-    if (removeBoxNS.value === "") {
+function removeRoom() {
+    let removeBox = document.getElementById("removenoshowsinput-button").value;
+    const firstFloorList = document.querySelector(".first-content");
+    const secondFloorList = document.querySelector(".second-content");
+    const thirdFloorList = document.querySelector(".third-content");
+    const fourthFloorList = document.querySelector(".fourth-content");
+    // console.log(removeBox);
+    if (removeBox.value === "") {
         alert("Please enter a room");
     }
-    else {
+    else { //WIPPPPPPPPPPPPPP
         let removeLi = listContainerNS.getElementsByTagName("li");
         for (var i=0; i< removeLi.length; i++) {
             let match = removeLi[i];
