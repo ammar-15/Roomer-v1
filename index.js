@@ -68,14 +68,67 @@ function saveDailyData(key, value) {
 // HOME PAGE //
 
 
+function addRoom() {
+    const inputBox = document.getElementById("addroominput-button");
+    const firstFloorList = document.querySelector(".first-content");
+    const secondFloorList = document.querySelector(".second-content");
+    const thirdFloorList = document.querySelector(".third-content");
+    const fourthFloorList = document.querySelector(".fourth-content");
+
+    if (inputBox.value === ""){
+        alert("Please enter a room");
+    }
+    else{
+        if (inputBox.value > 100 && inputBox.value < 199){
+        let li = document.createElement("li");
+        li.innerHTML = `<input type= "checkbox">${inputBox.value}`;
+        firstFloorList.appendChild(li);}
+    }
+    inputBoxNS.value="";
+}
+
+function saveNS(){
+    localStorage.setItem("data", l)
+}
+
+function removeRoomNS() {
+    let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    const listContainerNS = document.querySelector(".noshows-list");
+    // console.log(removeBoxNS);
+    if (removeBoxNS.value === "") {
+        alert("Please enter a room");
+    }
+    else {
+        let removeLi = listContainerNS.getElementsByTagName("li");
+        for (var i=0; i< removeLi.length; i++) {
+            let match = removeLi[i];
+            // console.log(match.textContent);
+            if(match) {
+                let textvalue = match.value || match.textContent || match.innerHTML;
+                // console.log(match);
+                // console.log(textvalue);
+                // console.log(removeBoxNS);
+                if(textvalue === removeBoxNS) {
+                    listContainerNS.removeChild(match);
+                }
+            }
+            else{
+                alert("Room does not exist");
+            }
+            removeBoxNS=""; //does not override the input box for some reason?
+            console.log(removeBoxNS); 
+        }
+    }
+}
+
+
 
 // LATE CHECK OUTS //
 
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time"); 
-console.log(timeOption);
-console.log(timeOption.value);
+//console.log(timeOption.value);
 function addRoomLC() {
     if (inputBoxLC.value === ""){
         alert("Please enter a room");
@@ -91,6 +144,7 @@ function addRoomLC() {
 
 function removeRoomLC() {
     let removeBoxLC = document.getElementById("removelatecheckoutinput-button").value;
+    const listContainerLC = document.querySelector(".latecheckout-list");
     // console.log(removeBoxLC);
     if (removeBoxLC.value === "") {
         alert("Please enter a room");
@@ -105,7 +159,7 @@ function removeRoomLC() {
                 // console.log(match);
                 // console.log(textvalue);
                 // console.log(removeBoxLC);
-                if(textvalue === removeBoxLC) {
+                if(textvalue = removeBoxLC) {
                     listContainerLC.removeChild(match);
                 }
             }
@@ -120,10 +174,9 @@ function removeRoomLC() {
 
 // NEW STAYOVERS //
 
-const inputBoxNStay = document.getElementById("newstayoversinput-button");
-const listContainerNStay = document.querySelector(".newstayovers-list");
-
 function addRoomNStay() {
+    const inputBoxNStay = document.getElementById("newstayoversinput-button");
+    const listContainerNStay = document.querySelector(".newstayovers-list");
     if (inputBoxNStay.value === ""){
         alert("Please enter a room");
     }
@@ -138,8 +191,9 @@ function addRoomNStay() {
 
 function removeRoomNStay() {
     let removeBoxNStay = document.getElementById("removenewstayoversinput-button").value;
+    const listContainerNStay = document.querySelector(".newstayovers-list");
     // console.log(removeBoxNStay);
-    if (removeBoxNStay.value === "") {
+    if (removeBoxNStay === "") {
         alert("Please enter a room");
     }
     else {
@@ -154,23 +208,23 @@ function removeRoomNStay() {
                 // console.log(removeBoxNStay);
                 if(textvalue === removeBoxNStay) {
                     listContainerNStay.removeChild(match);
+                    removeBoxNStay.innerHTML=""; //does not override the input box for some reason?
+                    console.log(removeBoxNStay.innerHTML); 
                 }
             }
             else{
                 alert("Room does not exist");
             }
-            removeBoxNStay=""; //does not override the input box for some reason?
-            console.log(removeBoxNStay); 
+            
         }
     }
 }
 
 // NO SHOWS //
 
-const inputBoxNS = document.getElementById("noshowsinput-button");
-const listContainerNS = document.querySelector(".noshows-list");
-
 function addRoomNS() {
+    const inputBoxNS = document.getElementById("noshowsinput-button");
+    const listContainerNS = document.querySelector(".noshows-list");
     if (inputBoxNS.value === ""){
         alert("Please enter a room");
     }
@@ -182,9 +236,13 @@ function addRoomNS() {
     inputBoxNS.value="";
 }
 
+function saveNS(){
+    localStorage.setItem("data", l)
+}
 
 function removeRoomNS() {
     let removeBoxNS = document.getElementById("removenoshowsinput-button").value;
+    const listContainerNS = document.querySelector(".noshows-list");
     // console.log(removeBoxNS);
     if (removeBoxNS.value === "") {
         alert("Please enter a room");
@@ -259,6 +317,7 @@ function createNoteElement(id, content) {
 
 //Adds new note and saves to local storage//
 function addNote() {
+    // console.log("add initialized");
     const notes = getNotes();
     const noteObject = {
         id: Math.floor(Math.random() * 100000),
@@ -292,7 +351,7 @@ function deleteNote(id, element) {
 }
 
 //Search Note//
-const search = () => {
+const searchNote = () => {
     const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
     const allNotes = document.querySelectorAll(".note");
 
