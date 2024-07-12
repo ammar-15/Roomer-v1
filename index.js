@@ -119,7 +119,9 @@ function removeRoom() {
     if (removeBox.value === "") {
         alert("Please enter a room");
     }
-    else { //WIPPPPPPPPPPPPPP
+ //WIPPPPPPPPPPPPPP
+
+    else {
         let removeLi = listContainerNS.getElementsByTagName("li");
         for (var i=0; i< removeLi.length; i++) {
             let match = removeLi[i];
