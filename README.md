@@ -45,7 +45,7 @@ Developing Roomer v1 taught me a lot about web development:
 - **HTML**: Structuring web pages with various tags and attributes.
 - **CSS**: Styling web pages using modern layout techniques like flexbox and grid.
 - **JavaScript**: Writing efficient and dynamic scripts to manipulate the DOM and handle data.
-- **Git**: Effective version control and collaboration using commands such as `git pull`, `git add`, `git commit`, `git branches`, `git force`, `git merge`, `pull requests`, and `git reset`.
+- **Git**: Effective version control and collaboration using commands such as `git pull`, `git add`, `git commit`, `git branches`, `git force`, `git fetch`, `git merge`, `pull requests`, and `git reset`.
 - **Bootstrap**: Loading ⏳
 
 ## 🔮 Future Versions
