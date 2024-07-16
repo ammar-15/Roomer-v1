@@ -109,6 +109,31 @@ function saveNS(){
     localStorage.setItem("data", l)
 }
 
+//WIPPPPPPPPPPPPPP (saving data to local storage is added)
+
+//Search Room Button  (wip)
+
+const searchRoom = () => {
+    const searchbox = document.getElementById("searchinput-button");
+    const allRooms = document.querySelectorAll(".note");
+
+    for (var i=0; i< allNotes.length; i++) {
+        let match = allNotes[i];
+        if(match) {
+            let textvalue = match.value || match.textContent;
+
+            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+                allNotes[i].style.display = "";
+            }
+            else{
+                allNotes[i].style.display = "none";
+            }
+        }
+    }
+
+}
+
+
 function removeRoom() {
     let removeBox = document.getElementById("removenoshowsinput-button").value;
     const firstFloorList = document.querySelector(".first-content");
@@ -119,7 +144,7 @@ function removeRoom() {
     if (removeBox.value === "") {
         alert("Please enter a room");
     }
- //WIPPPPPPPPPPPPPP
+ //WIPPPPPPPPPPPPPP (remove feature for all floors is to be added)
 
     else {
         let removeLi = listContainerNS.getElementsByTagName("li");
@@ -130,7 +155,7 @@ function removeRoom() {
                 let textvalue = match.value || match.textContent || match.innerHTML;
                 // console.log(match);
                 // console.log(textvalue);
-                // console.log(removeBoxNS);
+                // console.log(removeBox);
                 if(textvalue === removeBoxNS) {
                     listContainerNS.removeChild(match);
                 }
@@ -138,8 +163,8 @@ function removeRoom() {
             else{
                 alert("Room does not exist");
             }
-            removeBoxNS=""; //does not override the input box for some reason?
-            console.log(removeBoxNS); 
+            removeBox=""; //does not override the input box for some reason?
+            console.log(removeBox); 
         }
     }
 }
@@ -375,7 +400,7 @@ function deleteNote(id, element) {
 
 //Search Note//
 const searchNote = () => {
-    const searchbox = document.getElementById("searchnoteinput-button").value.toUpperCase();
+    const searchboxN = document.getElementById("searchnoteinput-button").value.toUpperCase();
     const allNotes = document.querySelectorAll(".note");
 
     for (var i=0; i< allNotes.length; i++) {
@@ -383,7 +408,7 @@ const searchNote = () => {
         if(match) {
             let textvalue = match.value || match.textContent;
 
-            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+            if(textvalue.toUpperCase().indexOf(searchboxN) > -1){
                 allNotes[i].style.display = "";
             }
             else{
