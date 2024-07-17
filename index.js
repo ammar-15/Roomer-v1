@@ -118,15 +118,15 @@ const searchRoom = () => {
     const allRooms = document.querySelectorAll(".note");
 
     for (var i=0; i< allNotes.length; i++) {
-        let match = allNotes[i];
+        let match = allRooms[i];
         if(match) {
-            let textvalue = match.value || match.textContent;
+            let textvalue = math.innerHTML || match.value || match.textContent;
 
             if(textvalue.toUpperCase().indexOf(searchbox) > -1){
-                allNotes[i].style.display = "";
+                allRooms[i].style.display = "";
             }
             else{
-                allNotes[i].style.display = "none";
+                allRooms[i].style.display = "none";
             }
         }
     }
@@ -194,7 +194,7 @@ function removeRoomLC() {
     let removeBoxLC = document.getElementById("removelatecheckoutinput-button").value;
     const listContainerLC = document.querySelector(".latecheckout-list");
     // console.log(removeBoxLC);
-    if (removeBoxLC.value === "") {
+    if (removeBoxLC === "") {
         alert("Please enter a room");
     }
     else {
@@ -207,12 +207,13 @@ function removeRoomLC() {
                 // console.log(match);
                 // console.log(textvalue);
                 // console.log(removeBoxLC);
-                if(textvalue = removeBoxLC) {
+                if(textvalue === removeBoxLC) {
                     listContainerLC.removeChild(match);
                 }
+                else{
+                    alert("Room does not exist");
             }
-            else{
-                alert("Room does not exist");
+            
             }
             removeBoxLC=""; //does not override the input box for some reason?
             console.log(removeBoxLC); 
