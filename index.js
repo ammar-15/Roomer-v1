@@ -358,99 +358,85 @@ function removeRoomNStay() {
 function addRoomNS() {
     const inputBoxNS = document.getElementById("noshowsinput-button");
     const listContainerNS = document.querySelector(".noshows-list");
-    if (inputBoxNS.value === ""){
+
+    if (inputBoxNS.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else{
+    } else {
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxNS.value}`;
+        li.innerHTML = `<input type="checkbox">${inputBoxNS.value.trim()}`;
         listContainerNS.appendChild(li);
+        inputBoxNS.value = "";
+        saveNS();
     }
-    inputBoxNS.value="";
 }
 
-function saveNS(){
-    localStorage.setItem("data", l)
+function saveNS() {
+    const listContainerNS = document.querySelector(".noshows-list");
+    const items = [];
+
+    listContainerNS.querySelectorAll("li").forEach(item => {
+        items.push({
+            text: item.textContent.trim(),
+            checked: item.querySelector("input[type='checkbox']").checked
+        });
+    });
+
+    localStorage.setItem("noShowsData", JSON.stringify(items));
+    console.log(localStorage.getItem("noShowsData"));
 }
+
+function showNS() {
+    const listContainerNS = document.querySelector(".noshows-list");
+    const items = JSON.parse(localStorage.getItem("noShowsData") || "[]");
+
+    listContainerNS.innerHTML = "";
+
+    items.forEach(item => {
+        let li = document.createElement("li");
+        li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+        listContainerNS.appendChild(li);
+    });
+}
+
+showNS();
 
 function removeRoomNS() {
-    let removeBoxNS = document.getElementById("removenoshowsinput-button");
+    const removeBoxNS = document.getElementById("removenoshowsinput-button");
     const listContainerNS = document.querySelector(".noshows-list");
-    // console.log(removeBoxNS);
-    if (removeBoxNS.value === "") {
+
+    if (removeBoxNS.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi = listContainerNS.getElementsByTagName("li");
-        for (var i=0; i< removeLi.length; i++) {
+    } else {
+        const removeLi = listContainerNS.getElementsByTagName("li");
+        let roomFound = false;
+
+        for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
-            // console.log(match.textContent);
-            if(match) {
-                let textvalue = match.value || match.textContent || match.innerHTML;
-                // console.log(match);
-                // console.log(textvalue);
-                // console.log(removeBoxNS);
-                if(textvalue === removeBoxNS.value) {
-                    listContainerNS.removeChild(match);
-                    removeBoxNS.value="";
-                    //console.log(removeBoxNS.textContent);
-                    break;
-                }
-                else{
-                    alert("Room does not exist");
-                    removeBoxNS.value="";
-                    //console.log(removeBoxNS.textContent);
-                    break;
-                }
+            let textvalue = match.textContent.trim();
+
+            if (textvalue === removeBoxNS.value.trim()) {
+                listContainerNS.removeChild(match);
+                roomFound = true;
+                break;
             }
+        }
+
+        if (roomFound) {
+            removeBoxNS.value = "";
+            saveNS(); 
+        } else {
+            alert("Room does not exist");
+            removeBoxNS.value = "";
         }
     }
 }
+
 
 
 // NOTES PAGE //
 
 const notesContainer = document.querySelector(".addnotes-container")
-const addNoteButton = notesContainer.querySelector(".add-notes")
-
-getNotes().forEach(note => {
-    const noteElement = createNoteElement(note.id, note.content);
-    notesContainer.insertBefore(noteElement, addNoteButton);
-});
-
-//Making add button work//
-addNoteButton.addEventListener("click", () => addNote());
-
-//Retrieves existing notes from local storage to client browser//
-function getNotes() {
-    return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]")
-}
-//Takes an array of notes, save new notesin client browser//
-function saveNotes(notes) {
-    localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
-}
-//Builds a new element to show a new note//
-function createNoteElement(id, content) {
-    const element = document.createElement("textarea");
-
-    element.classList.add("note");
-    element.value = content;
-    element.placeholder = "Empty Sticky Note";
-
-    element.addEventListener("change", () => {
-        updateNote(id, element.value);
-    });
-
-    element.addEventListener("dblclick", () => {
-        const doDelete = confirm("Are you sure you wish to delete this note?")
-    
-        if (doDelete) {
-            deleteNote(id, element);        
-        }
-    });
-
-    return element;
-}
+1
 
 //Adds new note and saves to local storage//
 function addNote() {
