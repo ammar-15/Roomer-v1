@@ -254,7 +254,7 @@ const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time"); 
 //console.log(timeOption.value);
 function addRoomLC() {
-    if (inputBoxLC.value === ""){
+    if (inputBoxLC.value.trim() === ""){
         alert("Please enter a room");
     }
     else{
@@ -307,51 +307,84 @@ function removeRoomLC() {
 function addRoomNStay() {
     const inputBoxNStay = document.getElementById("newstayoversinput-button");
     const listContainerNStay = document.querySelector(".newstayovers-list");
-    if (inputBoxNStay.value === ""){
+
+    if (inputBoxNStay.value === "") {
+        console.log(inputBoxNStay);
+        console.log(inputBoxNStay.value);
         alert("Please enter a room");
-    }
-    else{
+    } else {
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxNStay.value}`;
+        li.innerHTML = `<input type="checkbox">${inputBoxNStay.value.trim()}`;
         listContainerNStay.appendChild(li);
+        inputBoxNStay.value = "";
+        saveNStay();
     }
-    inputBoxNStay.value="";
 }
 
+function saveNStay() {
+    const listContainerNStay = document.querySelector(".newstayovers-list");
+    const items = [];
+
+    listContainerNStay.querySelectorAll("li").forEach(item => {
+        items.push({
+            text: item.textContent.trim(),
+            checked: item.querySelector("input[type='checkbox']").checked
+        });
+    });
+
+    localStorage.setItem("newStayoverData", JSON.stringify(items));
+    console.log(localStorage.getItem("newStayoverData"));
+}
+
+function showNStay() {
+    const listContainerNStay = document.querySelectorAll(".newstayovers-list");
+    const items = JSON.parse(localStorage.getItem("newStayoverData") || "[]");
+
+    listContainerNStay.forEach(listContainerNSt => {
+        listContainerNSt.innerHTML = "";
+
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+            listContainerNSt.appendChild(li);
+        });
+    });
+
+}
+
+showNStay();
 
 function removeRoomNStay() {
-    let removeBoxNStay = document.getElementById("removenewstayoversinput-button");
+    const removeBoxNStay = document.getElementById("removenewstayoversinput-button");
     const listContainerNStay = document.querySelector(".newstayovers-list");
-    // console.log(removeBoxNStay);
-    if (removeBoxNStay.value === "") {
+
+    if (removeBoxNStay.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi = listContainerNStay.getElementsByTagName("li");
-        for (var i=0; i< removeLi.length; i++) {
+    } else {
+        const removeLi = listContainerNStay.getElementsByTagName("li");
+        let NStayFound = false;
+
+        for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
-            // console.log(match.textContent);
-            if(match) {
-                let textvalue = match.value || match.textContent || match.innerHTML;
-                // console.log(match);
-                // console.log(textvalue);
-                // console.log(removeBoxNStay);
-                if(textvalue === removeBoxNStay.value) {
-                    listContainerNStay.removeChild(match);
-                    removeBoxNStay.value="";
-                    //console.log(removeBoxNStay.textContent);
-                    break;
-                }
-                else{
-                    alert("Room does not exist");
-                    removeBoxNStay.value="";
-                    //console.log(removeBoxNStay.textContent);
-                    break;
-                }
+            let textvalue = match.textContent.trim();
+
+            if (textvalue === removeBoxNStay.value.trim()) {
+                listContainerNStay.removeChild(match);
+                NStayFound = true;
+                break;
             }
+        }
+
+        if (NStayFound) {
+            removeBoxNStay.value = "";
+            saveNStay(); 
+        } else {
+            alert("Room does not exist");
+            removeBoxNStay.value = "";
         }
     }
 }
+
 
 // NO SHOWS //
 
@@ -386,16 +419,19 @@ function saveNS() {
 }
 
 function showNS() {
-    const listContainerNS = document.querySelector(".noshows-list");
+    const listContainerNS = document.querySelectorAll(".noshows-list");
     const items = JSON.parse(localStorage.getItem("noShowsData") || "[]");
 
-    listContainerNS.innerHTML = "";
+    listContainerNS.forEach(listContainerns => {
+        listContainerns.innerHTML = "";
 
-    items.forEach(item => {
-        let li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
-        listContainerNS.appendChild(li);
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+            listContainerns.appendChild(li);
+        });
     });
+
 }
 
 showNS();
@@ -408,7 +444,7 @@ function removeRoomNS() {
         alert("Please enter a room");
     } else {
         const removeLi = listContainerNS.getElementsByTagName("li");
-        let roomFound = false;
+        let NSFound = false;
 
         for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
@@ -416,12 +452,12 @@ function removeRoomNS() {
 
             if (textvalue === removeBoxNS.value.trim()) {
                 listContainerNS.removeChild(match);
-                roomFound = true;
+                NSFound = true;
                 break;
             }
         }
 
-        if (roomFound) {
+        if (NSFound) {
             removeBoxNS.value = "";
             saveNS(); 
         } else {
