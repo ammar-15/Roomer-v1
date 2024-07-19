@@ -358,76 +358,79 @@ function removeRoomNStay() {
 function addRoomNS() {
     const inputBoxNS = document.getElementById("noshowsinput-button");
     const listContainerNS = document.querySelector(".noshows-list");
-    if (inputBoxNS.value === ""){
+
+    if (inputBoxNS.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxNS.value}`;
-        listContainerNS.appendChild(li);
-        saveNS();
-    }
-    inputBoxNS.value="";
-    
-}
-
-var checkboxNS = document.querySelector("input[type=checkbox]");
-checkboxNS.addEventListener("change", function(){
-    if (this.checked){
-        console.log("Checked checkbox");
-        saveNS();
     } else {
-        console.log("unchecked");
+        let li = document.createElement("li");
+        li.innerHTML = `<input type="checkbox">${inputBoxNS.value.trim()}`;
+        listContainerNS.appendChild(li);
+        inputBoxNS.value = "";
+        saveNS();
     }
-})
-
-function saveNS(){
-    const listContainerNS = document.querySelector(".noshows-list");
-    localStorage.setItem("data", listContainerNS.textContent);
-    console.log(listContainerNS.textContent);
 }
 
-function showNS(){
+function saveNS() {
     const listContainerNS = document.querySelector(".noshows-list");
-    listContainerNS.textContent = localStorage.getItem("data");
+    const items = [];
+
+    listContainerNS.querySelectorAll("li").forEach(item => {
+        items.push({
+            text: item.textContent.trim(),
+            checked: item.querySelector("input[type='checkbox']").checked
+        });
+    });
+
+    localStorage.setItem("noShowsData", JSON.stringify(items));
+    console.log(localStorage.getItem("noShowsData"));
 }
 
-showNS()
+function showNS() {
+    const listContainerNS = document.querySelector(".noshows-list");
+    const items = JSON.parse(localStorage.getItem("noShowsData") || "[]");
 
+    listContainerNS.innerHTML = "";
+
+    items.forEach(item => {
+        let li = document.createElement("li");
+        li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+        listContainerNS.appendChild(li);
+    });
+}
+
+showNS();
 
 function removeRoomNS() {
-    let removeBoxNS = document.getElementById("removenoshowsinput-button");
+    const removeBoxNS = document.getElementById("removenoshowsinput-button");
     const listContainerNS = document.querySelector(".noshows-list");
-    // console.log(removeBoxNS);
-    if (removeBoxNS.value === "") {
+
+    if (removeBoxNS.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi = listContainerNS.getElementsByTagName("li");
-        for (var i=0; i< removeLi.length; i++) {
+    } else {
+        const removeLi = listContainerNS.getElementsByTagName("li");
+        let roomFound = false;
+
+        for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
-            // console.log(match.textContent);
-            if(match) {
-                let textvalue = match.value || match.textContent || match.innerHTML;
-                // console.log(match);
-                // console.log(textvalue);
-                // console.log(removeBoxNS);
-                if(textvalue === removeBoxNS.value) {
-                    listContainerNS.removeChild(match);
-                    removeBoxNS.value="";
-                    //console.log(removeBoxNS.textContent);
-                    break;
-                }
-                else{
-                    alert("Room does not exist");
-                    removeBoxNS.value="";
-                    //console.log(removeBoxNS.textContent);
-                    break;
-                }
+            let textvalue = match.textContent.trim();
+
+            if (textvalue === removeBoxNS.value.trim()) {
+                listContainerNS.removeChild(match);
+                roomFound = true;
+                break;
             }
+        }
+
+        if (roomFound) {
+            removeBoxNS.value = "";
+            saveNS(); 
+        } else {
+            alert("Room does not exist");
+            removeBoxNS.value = "";
         }
     }
 }
+
 
 
 // NOTES PAGE //
