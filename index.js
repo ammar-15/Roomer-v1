@@ -254,7 +254,7 @@ const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time"); 
 //console.log(timeOption.value);
 function addRoomLC() {
-    if (inputBoxLC.value === ""){
+    if (inputBoxLC.value.trim() === ""){
         alert("Please enter a room");
     }
     else{
@@ -304,18 +304,20 @@ function removeRoomLC() {
 
 // NEW STAYOVERS //
 
-function addRoomNS() {
-    const inputBoxNS = document.getElementById("noshowsinput-button");
-    const listContainerNS = document.querySelector(".noshows-list");
+function addRoomNStay() {
+    const inputBoxNStay = document.getElementById("newstayoversinput-button");
+    const listContainerNStay = document.querySelector(".newstayovers-list");
 
-    if (inputBoxNS.value.trim() === "") {
+    if (inputBoxNStay.value === "") {
+        console.log(inputBoxNStay);
+        console.log(inputBoxNStay.value);
         alert("Please enter a room");
     } else {
         let li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox">${inputBoxNS.value.trim()}`;
-        listContainerNS.appendChild(li);
-        inputBoxNS.value = "";
-        saveNS();
+        li.innerHTML = `<input type="checkbox">${inputBoxNStay.value.trim()}`;
+        listContainerNStay.appendChild(li);
+        inputBoxNStay.value = "";
+        saveNStay();
     }
 }
 
@@ -335,16 +337,19 @@ function saveNStay() {
 }
 
 function showNStay() {
-    const listContainerNStay = document.querySelector(".noshows-list");
+    const listContainerNStay = document.querySelectorAll(".newstayovers-list");
     const items = JSON.parse(localStorage.getItem("newStayoverData") || "[]");
 
-    listContainerNStay.innerHTML = "";
+    listContainerNStay.forEach(listContainerNSt => {
+        listContainerNSt.innerHTML = "";
 
-    items.forEach(item => {
-        let li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
-        listContainerNStay.appendChild(li);
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+            listContainerNSt.appendChild(li);
+        });
     });
+
 }
 
 showNStay();
@@ -414,16 +419,19 @@ function saveNS() {
 }
 
 function showNS() {
-    const listContainerNS = document.querySelector(".noshows-list");
+    const listContainerNS = document.querySelectorAll(".noshows-list");
     const items = JSON.parse(localStorage.getItem("noShowsData") || "[]");
 
-    listContainerNS.innerHTML = "";
+    listContainerNS.forEach(listContainerns => {
+        listContainerns.innerHTML = "";
 
-    items.forEach(item => {
-        let li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
-        listContainerNS.appendChild(li);
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.text}`;
+            listContainerns.appendChild(li);
+        });
     });
+
 }
 
 showNS();
