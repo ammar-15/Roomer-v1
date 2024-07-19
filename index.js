@@ -365,13 +365,35 @@ function addRoomNS() {
         let li = document.createElement("li");
         li.innerHTML = `<input type= "checkbox">${inputBoxNS.value}`;
         listContainerNS.appendChild(li);
+        saveNS();
     }
     inputBoxNS.value="";
+    
 }
 
+var checkboxNS = document.querySelector("input[type=checkbox]");
+checkboxNS.addEventListener("change", function(){
+    if (this.checked){
+        console.log("Checked checkbox");
+        saveNS();
+    } else {
+        console.log("unchecked");
+    }
+})
+
 function saveNS(){
-    localStorage.setItem("data", l)
+    const listContainerNS = document.querySelector(".noshows-list");
+    localStorage.setItem("data", listContainerNS.textContent);
+    console.log(listContainerNS.textContent);
 }
+
+function showNS(){
+    const listContainerNS = document.querySelector(".noshows-list");
+    listContainerNS.textContent = localStorage.getItem("data");
+}
+
+showNS()
+
 
 function removeRoomNS() {
     let removeBoxNS = document.getElementById("removenoshowsinput-button");
@@ -411,46 +433,7 @@ function removeRoomNS() {
 // NOTES PAGE //
 
 const notesContainer = document.querySelector(".addnotes-container")
-const addNoteButton = notesContainer.querySelector(".add-notes")
-
-getNotes().forEach(note => {
-    const noteElement = createNoteElement(note.id, note.content);
-    notesContainer.insertBefore(noteElement, addNoteButton);
-});
-
-//Making add button work//
-addNoteButton.addEventListener("click", () => addNote());
-
-//Retrieves existing notes from local storage to client browser//
-function getNotes() {
-    return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]")
-}
-//Takes an array of notes, save new notesin client browser//
-function saveNotes(notes) {
-    localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
-}
-//Builds a new element to show a new note//
-function createNoteElement(id, content) {
-    const element = document.createElement("textarea");
-
-    element.classList.add("note");
-    element.value = content;
-    element.placeholder = "Empty Sticky Note";
-
-    element.addEventListener("change", () => {
-        updateNote(id, element.value);
-    });
-
-    element.addEventListener("dblclick", () => {
-        const doDelete = confirm("Are you sure you wish to delete this note?")
-    
-        if (doDelete) {
-            deleteNote(id, element);        
-        }
-    });
-
-    return element;
-}
+1
 
 //Adds new note and saves to local storage//
 function addNote() {
