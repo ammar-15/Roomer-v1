@@ -59,6 +59,17 @@ function saveDailyData(key, value) {
     localStorage.setItem(`dailyData-${key}`, value);
 }
 
+// Print all wip //
+
+function printAll() {
+    
+}
+
+// Reset all wip //
+
+function resetAll() {
+
+}
 
 
 // INTRO PAGE //
@@ -251,56 +262,84 @@ function removeRoom() {
 
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
-const timeOption = document.getElementById("latecheckout-time"); 
-//console.log(timeOption.value);
+const timeOption = document.getElementById("latecheckout-time");
+
 function addRoomLC() {
-    if (inputBoxLC.value.trim() === ""){
+    if (inputBoxLC.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else{
+    } else {
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value} - ${timeOption.value}`;
+        li.innerHTML = `<input type="checkbox">${inputBoxLC.value.trim()} - ${timeOption.value}`;
         listContainerLC.appendChild(li);
+        inputBoxLC.value = "";
+        saveLC();
     }
-    inputBoxLC.value="";
 }
 
+function saveLC() {
+    const listContainerLC = document.querySelector(".latecheckout-list");
+    const timeOption = document.getElementById("latecheckout-time");
+    const items = [];
+
+    listContainerLC.querySelectorAll("li").forEach(item => {
+        const [room, time] = item.textContent.split(" - ");
+        items.push({
+            room: room.trim(),
+            time: time.trim(),
+            checked: item.querySelector("input[type='checkbox']").checked
+        });
+    });
+
+    localStorage.setItem("lateCheckoutData", JSON.stringify(items));
+    console.log(localStorage.getItem("lateCheckoutData")); 
+}
+
+function showLC() {
+    const listContainerLC = document.querySelector(".latecheckout-list");
+    const items = JSON.parse(localStorage.getItem("lateCheckoutData") || "[]");
+
+    listContainerLC.forEach(listContainerLCo => {
+        listContainerLCo.innerHTML = "";
+
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.room} - ${item.time}`;
+            listContainerLCo.appendChild(li);
+    });
+    });
+}
 
 function removeRoomLC() {
-    let removeBoxLC = document.getElementById("removelatecheckoutinput-button");
-    const listContainerLC = document.querySelector(".latecheckout-list");
-    // console.log(removeBoxLC);
-    if (removeBoxLC.value === "") {
+    const removeBoxLC = document.getElementById("removelatecheckoutinput-button");
+
+    if (removeBoxLC.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi = listContainerLC.getElementsByTagName("li");
-        for (var i=0; i< removeLi.length; i++) {
+    } else {
+        const removeLi = listContainerLC.getElementsByTagName("li");
+        let LCFound = false;
+
+        for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
-            // console.log(match.textContent);
-            if(match) {
-                let textvalue = match.value || match.textContent || match.innerHTML;
-                // console.log(match);
-                // console.log(textvalue);
-                // console.log(removeBoxLC);
-                if(textvalue === removeBoxLC.value) {
-                    listContainerLC.removeChild(match);
-                    removeBoxLC.value="";
-                    //console.log(removeBoxLC.textContent);
-                    break;
-                }
-                else{
-                    console.log("break");
-                    alert("Room does not exist");
-                    removeBoxLC.value="";
-                    //console.log(removeBoxLC.textContent);
-                    break;
-                }
+            let textvalue = match.textContent.split(" - ")[0].trim();
+
+            if (textvalue === removeBoxLC.value.trim()) {
+                listContainerLC.removeChild(match);
+                LCFound = true;
+                break;
             }
-            
+        }
+
+        if (LCFound) {
+            removeBoxLC.value = "";
+            saveLC(); 
+        } else {
+            alert("Room does not exist");
+            removeBoxLC.value = "";
         }
     }
 }
+
+showLC();
 
 // NEW STAYOVERS //
 
@@ -472,11 +511,42 @@ function removeRoomNS() {
 // NOTES PAGE //
 
 const notesContainer = document.querySelector(".addnotes-container")
-1
+const addNoteButton = document.querySelector(".add-notes");
 
-//Adds new note and saves to local storage//
+//Get notes from local storage//
+function getNotes() {
+    return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
+}
+
+//Save notes to local storage//
+function saveNotes(notes) {
+    localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
+}
+
+//Creates a new note element//
+function createNoteElement(id, content) {
+    const element = document.createElement("textarea");
+
+    element.classList.add("note");
+    element.value = content;
+    element.placeholder = "Empty Note";
+
+    element.addEventListener("change", () => {
+        updateNote(id, element.value);
+    });
+
+    element.addEventListener("dblclick", () => {
+        const doDelete = confirm("Are you sure you wish to delete this note?");
+        if (doDelete) {
+            deleteNote(id, element);
+        }
+    });
+
+    return element;
+}
+
+//Adds new note//
 function addNote() {
-    // console.log("add initialized");
     const notes = getNotes();
     const noteObject = {
         id: Math.floor(Math.random() * 100000),
@@ -488,15 +558,18 @@ function addNote() {
     notes.push(noteObject);
     saveNotes(notes);
 }
+
 //Updates notes//
 function updateNote(id, newContent) {
     console.log("Updating note....");
     console.log(id, newContent);
     const notes = getNotes();
-    const targetNote = notes.filter(note => note.id == id) [0];
+    const targetNote = notes.find(note => note.id == id);
 
-    targetNote.content = newContent;
-    saveNotes(notes);
+    if (targetNote) {
+        targetNote.content = newContent;
+        saveNotes(notes);
+    }
 }
 
 //Deletes notes//
@@ -509,23 +582,35 @@ function deleteNote(id, element) {
     notesContainer.removeChild(element);
 }
 
+//Load existing notes//
+function loadNotes() {
+    const notes = getNotes();
+    notes.forEach(note => {
+        const noteElement = createNoteElement(note.id, note.content);
+        notesContainer.insertBefore(noteElement, addNoteButton);
+    });
+}
+
 //Search Note//
-const searchNote = () => {
+function searchNote() {
     const searchboxN = document.getElementById("searchnoteinput-button").value.toUpperCase();
     const allNotes = document.querySelectorAll(".note");
 
-    for (var i=0; i< allNotes.length; i++) {
-        let match = allNotes[i];
-        if(match) {
-            let textvalue = match.value || match.textContent;
-
-            if(textvalue.toUpperCase().indexOf(searchboxN) > -1){
-                allNotes[i].style.display = "";
-            }
-            else{
-                allNotes[i].style.display = "none";
-            }
+    allNotes.forEach(note => {
+        let textvalue = note.value || note.textContent; // Get the note content
+        if (textvalue.toUpperCase().indexOf(searchboxN) > -1) { // Check if the note contains the search text
+            note.style.display = "";
+        } else {
+            note.style.display = "none";
         }
-    }
-
+    });
 }
+
+// Load notes on page load
+loadNotes();                  
+
+// Event listener for add note button
+addNoteButton.addEventListener("click", addNote); 
+
+// Event listener for search input
+document.getElementById("searchnoteinput-button").addEventListener("input", searchNote);
