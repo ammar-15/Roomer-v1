@@ -262,56 +262,84 @@ function removeRoom() {
 
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
-const timeOption = document.getElementById("latecheckout-time"); 
-//console.log(timeOption.value);
+const timeOption = document.getElementById("latecheckout-time");
+
 function addRoomLC() {
-    if (inputBoxLC.value.trim() === ""){
+    if (inputBoxLC.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else{
+    } else {
         let li = document.createElement("li");
-        li.innerHTML = `<input type= "checkbox">${inputBoxLC.value} - ${timeOption.value}`;
+        li.innerHTML = `<input type="checkbox">${inputBoxLC.value.trim()} - ${timeOption.value}`;
         listContainerLC.appendChild(li);
+        inputBoxLC.value = "";
+        saveLC();
     }
-    inputBoxLC.value="";
 }
 
+function saveLC() {
+    const listContainerLC = document.querySelector(".latecheckout-list");
+    const timeOption = document.getElementById("latecheckout-time");
+    const items = [];
+
+    listContainerLC.querySelectorAll("li").forEach(item => {
+        const [room, time] = item.textContent.split(" - ");
+        items.push({
+            room: room.trim(),
+            time: time.trim(),
+            checked: item.querySelector("input[type='checkbox']").checked
+        });
+    });
+
+    localStorage.setItem("lateCheckoutData", JSON.stringify(items));
+    console.log(localStorage.getItem("lateCheckoutData")); 
+}
+
+function showLC() {
+    const listContainerLC = document.querySelector(".latecheckout-list");
+    const items = JSON.parse(localStorage.getItem("lateCheckoutData") || "[]");
+
+    listContainerLC.forEach(listContainerLCo => {
+        listContainerLCo.innerHTML = "";
+
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"${item.checked ? " checked" : ""}>${item.room} - ${item.time}`;
+            listContainerLCo.appendChild(li);
+    });
+    });
+}
 
 function removeRoomLC() {
-    let removeBoxLC = document.getElementById("removelatecheckoutinput-button");
-    const listContainerLC = document.querySelector(".latecheckout-list");
-    // console.log(removeBoxLC);
-    if (removeBoxLC.value === "") {
+    const removeBoxLC = document.getElementById("removelatecheckoutinput-button");
+
+    if (removeBoxLC.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi = listContainerLC.getElementsByTagName("li");
-        for (var i=0; i< removeLi.length; i++) {
+    } else {
+        const removeLi = listContainerLC.getElementsByTagName("li");
+        let LCFound = false;
+
+        for (let i = 0; i < removeLi.length; i++) {
             let match = removeLi[i];
-            // console.log(match.textContent);
-            if(match) {
-                let textvalue = match.value || match.textContent || match.innerHTML;
-                // console.log(match);
-                // console.log(textvalue);
-                // console.log(removeBoxLC);
-                if(textvalue === removeBoxLC.value) {
-                    listContainerLC.removeChild(match);
-                    removeBoxLC.value="";
-                    //console.log(removeBoxLC.textContent);
-                    break;
-                }
-                else{
-                    console.log("break");
-                    alert("Room does not exist");
-                    removeBoxLC.value="";
-                    //console.log(removeBoxLC.textContent);
-                    break;
-                }
+            let textvalue = match.textContent.split(" - ")[0].trim();
+
+            if (textvalue === removeBoxLC.value.trim()) {
+                listContainerLC.removeChild(match);
+                LCFound = true;
+                break;
             }
-            
+        }
+
+        if (LCFound) {
+            removeBoxLC.value = "";
+            saveLC(); 
+        } else {
+            alert("Room does not exist");
+            removeBoxLC.value = "";
         }
     }
 }
+
+showLC();
 
 // NEW STAYOVERS //
 
