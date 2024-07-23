@@ -59,6 +59,17 @@ function saveDailyData(key, value) {
     localStorage.setItem(`dailyData-${key}`, value);
 }
 
+// Print all wip //
+
+function printAll() {
+    
+}
+
+// Reset all wip //
+
+function resetAll() {
+
+}
 
 
 // INTRO PAGE //
@@ -470,8 +481,6 @@ function removeRoomNS() {
 
 
 // NOTES PAGE //
-
-
 
 const notesContainer = document.querySelector(".addnotes-container")
 const addNoteButton = document.querySelector(".add-notes");
