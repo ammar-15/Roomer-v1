@@ -85,6 +85,6 @@ function removeRoomLC() {
 }
 
 showLC();
-export {showLC,items};
+
 
 
