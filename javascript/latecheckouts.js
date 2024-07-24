@@ -52,6 +52,8 @@ function showLC() {
     });
 }
 
+
+
 function removeRoomLC() {
     const removeBoxLC = document.getElementById("removelatecheckoutinput-button");
 
@@ -83,5 +85,6 @@ function removeRoomLC() {
 }
 
 showLC();
+export {showLC,items};
 
 

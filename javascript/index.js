@@ -62,7 +62,15 @@ function saveDailyData(key, value) {
 // Print all wip //
 
 function printAll() {
-    
+    if (event.type === "click"){
+        console.log('print');
+        import {showLC,items} from './latecheckouts.js';
+        
+        window.print(showLC,items);
+
+    } else {
+        console.log("print dont work")
+    }
 }
 
 // Reset all wip //
