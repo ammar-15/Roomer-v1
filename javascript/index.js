@@ -61,17 +61,16 @@ function saveDailyData(key, value) {
 
 // Print all wip //
 
-// function printAll() {
-//     if (event.type === "click"){
-//         console.log('print');
-//         import {showLC,items} from './latecheckouts.js';
+document.getElementById('printall-button').addEventListener('click', function () {
 
-//         window.print(showLC,items);
-
-//     } else {
-//         console.log("print dont work")
-//     }
-// }
+    const iframes = document.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+        iframe.onload = function() {
+            iframe.contentWindow.print();
+        };
+    });
+    window.print();
+});
 
 // Reset all wip //
 
