@@ -60,18 +60,40 @@ function saveDailyData(key, value) {
 }
 
 // Print all wip //
-
 document.getElementById('printall-button').addEventListener('click', function () {
-
     const iframes = document.querySelectorAll('iframe');
+    let loadedCounter = 0;
+    let combinedContent = '';
+
     iframes.forEach(iframe => {
         iframe.onload = function() {
-            iframe.contentWindow.print();
+            combinedContent += iframe.contentDocument.body.innerHTML;
+            loadedCounter++;
+            if (loadedCounter === iframes.length) {
+                printCombinedContent(combinedContent);
+            }
         };
+        iframe.src = iframe.src;
     });
-    window.print();
-});
 
+    function printCombinedContent(content) {
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Print All Content</title>
+                </head>
+                <body>${content}</body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 500);
+    }
+});
 // Reset all wip //
 
 function resetAll() {

@@ -47,12 +47,13 @@
                 </div>
                 <div class="printall-container">
                     <button id="printall-button"/>print all</button>
+                    <iframe id="page0" src="index.html" style="display: none;"></iframe>
+                    <iframe id="page1" src="lateCheckouts.html" style="display: none;"></iframe>
+                    <iframe id="page2" src="newStayovers.html" style="display: none;"></iframe>
+                    <iframe id="page3" src="noShows.html" style="display: none;"></iframe>
+                    <iframe id="page4" src="notes.html" style="display: none;"></iframe>    
                 </div>
-                <iframe id="page1" src="lateCheckouts.html" style="display: none;"></iframe>
-                <iframe id="page2" src="newStayovers.html" style="display: none;"></iframe>
-                <iframe id="page3" src="noShows.html" style="display: none;"></iframe>
-                <iframe id="page4" src="notes.html" style="display: none;"></iframe>
-            </div>
+                </div>
         </div>
         <nav class="navbar">
             <ul>
@@ -75,7 +76,7 @@
                 </div>
                 <div class="search">
                     <input type="text" id="searchinput-button" placeholder="Search room">
-                    <button id = "searchbtn" class="search-button" onclick="searchRoom()"><img src="images/search.png"></button>
+                    <button id = "searchbtn" class="search-button" onclick="searchRoom()"><img src="images/search.svg"></button>
                 </div>
                 <div class="remove-room">
                     <input type="text" id="removeroominput-button" placeholder="Remove room">

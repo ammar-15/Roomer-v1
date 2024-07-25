@@ -45,7 +45,7 @@ function saveLC() {
 function showLC() {
     const listContainerLC = document.querySelectorAll(".latecheckout-list");
     const items = JSON.parse(localStorage.getItem("lateCheckoutData") || "[]");
-    console.log(listContainerLC);
+    //console.log(listContainerLC);
 
     listContainerLC.forEach(listContainerLCo => {
         listContainerLCo.innerHTML = "";
