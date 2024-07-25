@@ -97,6 +97,19 @@ document.getElementById('printall-button').addEventListener('click', function ()
 // Reset all wip //
 
 function resetAll() {
+    alert("Please confirm that you wish to reset the data at end of day");
+    setTimeout( () => {
+    localStorage.clear(
+        "dailyData-inhouse", 
+        "checkoutsData", 
+        "dailyData-checkouts", 
+        "newStayoverData", 
+        "dailyData-stayovers", 
+        "noShowsData", 
+        "lateCheckoutData", 
+        "stickynotes-notes"), window.location.reload()}, 300
+    );
+    
 
 }
 
