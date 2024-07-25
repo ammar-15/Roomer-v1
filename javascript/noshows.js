@@ -1,6 +1,12 @@
 
 // NO SHOWS //
 
+document.getElementById("noshowsinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("addNSbtn").click();
+    }
+});
+
 function addRoomNS() {
     const inputBoxNS = document.getElementById("noshowsinput-button");
     const listContainerNS = document.querySelector(".noshows-list");
@@ -48,6 +54,12 @@ function showNS() {
 }
 
 showNS();
+
+document.getElementById("removenoshowsinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("removeNSbtn").click();
+    }
+});
 
 function removeRoomNS() {
     const removeBoxNS = document.getElementById("removenoshowsinput-button");

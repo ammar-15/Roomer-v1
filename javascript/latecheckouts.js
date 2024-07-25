@@ -2,6 +2,12 @@
 
 // LATE CHECK OUTS //
 
+document.getElementById("latecheckoutinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("addLCbtn").click();
+    }
+});
+
 const inputBoxLC = document.getElementById("latecheckoutinput-button");
 const listContainerLC = document.querySelector(".latecheckout-list");
 const timeOption = document.getElementById("latecheckout-time");
@@ -52,6 +58,11 @@ function showLC() {
     });
 }
 
+document.getElementById("removelatecheckoutinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("removeLCbtn").click();
+    }
+});
 
 
 function removeRoomLC() {

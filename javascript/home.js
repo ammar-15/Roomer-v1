@@ -1,5 +1,11 @@
 // HOME PAGE //
 
+document.getElementById("addroominput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("addbtn").click();
+    }
+});
+
 function addRoom() {
     const inputBox = document.getElementById("addroominput-button");
     const firstFloorList = document.querySelector(".first-content");
@@ -64,6 +70,12 @@ function showCheckouts() {
 
 showCheckouts();
 
+document.getElementById("removeroominput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("removebtn").click();
+    }
+});
+
 function removeRoom() {
     const removeBox = document.getElementById("removeroominput-button");
     const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
@@ -96,6 +108,12 @@ function removeRoom() {
     }
 }
 
+document.getElementById("searchinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("searchbtn").click();
+    }
+});
+
 function searchRoom() {
     const searchBox = document.getElementById("searchinput-button");
     const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
@@ -111,17 +129,19 @@ function searchRoom() {
             if (match.textContent.toUpperCase().includes(searchBox.value.toUpperCase())) {
                 items[i].style.backgroundColor = "yellow"; 
                 if (!roomFound) {
-                    items[i].scrollIntoView({ behavior: "smooth", block: "center" }); 
+                    items[i].scrollIntoView({ behavior: "smooth", block: "center" });
                     roomFound = true;
                 }
                 setTimeout(() => {
                     items[i].style.backgroundColor = "";
                 }, 3000);
+                break;
             } else {
                 items[i].style.backgroundColor = ""; 
             }
         }
     });
+    searchBox.value = ""; 
 
     if (!roomFound) {
         alert("Room does not exist");
