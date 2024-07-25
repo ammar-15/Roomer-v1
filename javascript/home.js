@@ -1,6 +1,10 @@
 // HOME PAGE //
 
-
+document.getElementById("addroominput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("addbtn").click();
+    }
+});
 
 function addRoom() {
     const inputBox = document.getElementById("addroominput-button");
@@ -9,173 +13,137 @@ function addRoom() {
     const thirdFloorList = document.querySelector(".third-content");
     const fourthFloorList = document.querySelector(".fourth-content");
 
-    if (inputBox.value === ""){
+    if (inputBox.value.trim() === ""){
         alert("Please enter a room");
-    }
-    else{
-        if (inputBox.value > 100 && inputBox.value < 199){
-            let li = document.createElement("li");
-            li.innerHTML = `${inputBox.value}`;
+    } else {
+        let li = document.createElement("li");
+        li.textContent = inputBox.value.trim();
+
+        if (inputBox.value > 100 && inputBox.value < 200){
             firstFloorList.appendChild(li);
-        }
-        else if (inputBox.value > 200 && inputBox.value < 299){
-            let li = document.createElement("li");
-            li.innerHTML = `${inputBox.value}`;
+        } else if (inputBox.value > 200 && inputBox.value < 300){
             secondFloorList.appendChild(li);
-        }
-        else if (inputBox.value > 300 && inputBox.value < 399){
-            let li = document.createElement("li");
-            li.innerHTML = `${inputBox.value}`;
+        } else if (inputBox.value > 300 && inputBox.value < 400){
             thirdFloorList.appendChild(li);
-        }
-        else if (inputBox.value > 400 && inputBox.value < 499){
-            let li = document.createElement("li");
-            li.innerHTML = `${inputBox.value}`;
+        } else if (inputBox.value > 400 && inputBox.value < 500){
             fourthFloorList.appendChild(li);
         }
 
-
+        inputBox.value = "";
+        saveCheckouts();
     }
-    inputBox.value="";
 }
 
-function saveNS(){
-    localStorage.setItem("data", l)
+function saveCheckouts() {
+    const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
+    const allRooms = {};
+
+    floors.forEach((floor, index) => {
+        const list = document.querySelector(floor);
+        const items = [];
+
+        list.querySelectorAll("li").forEach(item => {
+            items.push(item.textContent.trim());
+        });
+
+        allRooms[`floor${index + 1}`] = items;
+    });
+
+    localStorage.setItem("checkoutsData", JSON.stringify(allRooms));
 }
 
-//WIPPPPPPPPPPPPPP (saving data to local storage is added)
+function showCheckouts() {
+    const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
+    const allRooms = JSON.parse(localStorage.getItem("checkoutsData") || "{}");
 
-//Search Room Button  (wip)
+    floors.forEach((floor, index) => {
+        const list = document.querySelector(floor);
+        list.innerHTML = "";
 
-const searchRoom = () => {
-    const searchbox = document.getElementById("searchinput-button");
-    const allRooms = document.querySelectorAll(".note");
+        (allRooms[`floor${index + 1}`] || []).forEach(room => {
+            let li = document.createElement("li");
+            li.textContent = room;
+            list.appendChild(li);
+        });
+    });
+}
 
-    for (var i=0; i< allNotes.length; i++) {
-        let match = allRooms[i];
-        if(match) {
-            let textvalue = math.innerHTML || match.value || match.textContent;
+showCheckouts();
 
-            if(textvalue.toUpperCase().indexOf(searchbox) > -1){
-                allRooms[i].style.display = "";
-            }
-            else{
-                allRooms[i].style.display = "none";
-            }
-        }
+document.getElementById("removeroominput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("removebtn").click();
     }
-
-}
-
+});
 
 function removeRoom() {
-    let removeBox = document.getElementById("removeroominput-button");
-    const firstFloorList = document.querySelector(".first-content");
-    const secondFloorList = document.querySelector(".second-content");
-    const thirdFloorList = document.querySelector(".third-content");
-    const fourthFloorList = document.querySelector(".fourth-content");
-    // console.log(removeBox);
-    if (removeBox.value === "") {
+    const removeBox = document.getElementById("removeroominput-button");
+    const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
+
+    if (removeBox.value.trim() === "") {
         alert("Please enter a room");
-    }
-    else {
-        let removeLi1 = firstFloorList.getElementsByTagName("li");
-        let removeLi2 = secondFloorList.getElementsByTagName("li");
-        let removeLi3 = thirdFloorList.getElementsByTagName("li");
-        let removeLi4 = fourthFloorList.getElementsByTagName("li");
-        
-        if (removeBox.value < 200){        
-            for (var i=0; i< removeLi1.length; i++) {
-                let match1 = removeLi1[i];
-                //console.log(match2.textContent);
-                if(match1) {
-                    let textvalue = match1.textContent;
-                    // console.log(match);
-                     // console.log(textvalue);
-                    // console.log(removeBox);
-                    if(textvalue === removeBox.value) {
-                        firstFloorList.removeChild(match1);
-                        removeBox.value="";
-                        break;
-                    }
-                    else{
-                        alert("Room does not exist");
-                        removeBox.value="";
-                        //console.log(removeBox.textContent);
-                        break;
-                    }
+    } else {
+        let roomFound = false;
+
+        floors.forEach(floor => {
+            const list = document.querySelector(floor);
+            const items = list.getElementsByTagName("li");
+
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].textContent.trim() === removeBox.value.trim()) {
+                    list.removeChild(items[i]);
+                    roomFound = true;
+                    break;
                 }
             }
-        }
-        else if (200 < removeBox.value < 300){        
-            for (var i=0; i< removeLi2.length; i++) {
-                let match2 = removeLi2[i];
-                //console.log(match2.textContent);
-                if(match2) {
-                    let textvalue = match2.textContent;
-                    // console.log(match2);
-                     // console.log(textvalue);
-                    // console.log(removeBox);
-                    if(textvalue === removeBox.value) {
-                        secondFloorList.removeChild(match2);
-                        removeBox.value="";
-                        break;
-                    }
-                    else{
-                        alert("Room does not exist");
-                        removeBox.value="";
-                        //console.log(removeBox.textContent);
-                        break;
-                    }
-                }
-            }
-        }
-        else if (300 < removeBox.value < 400){        
-            for (var i=0; i< removeLi3.length; i++) {
-                let match3 = removeLi3[i];
-                //console.log(match2.textContent);
-                if(match3) {
-                    let textvalue = match3.textContent;
-                    // console.log(match3);
-                     // console.log(textvalue);
-                    // console.log(removeBox);
-                    if(textvalue === removeBox.value) {
-                        thirdFloorList.removeChild(match3);
-                        removeBox.value="";
-                        break;
-                    }
-                    else{
-                        alert("Room does not exist");
-                        removeBox.value="";
-                        //console.log(removeBox.textContent);
-                        break;
-                    }
-                }
-            }
-        }
-        else if (400 < removeBox.value < 500){        
-            for (var i=0; i< removeLi4.length; i++) {
-                let match2 = removeLi4[i];
-                //console.log(match2.textContent);
-                if(match4) {
-                    let textvalue = match4.textContent;
-                    // console.log(match4);
-                     // console.log(textvalue);
-                    // console.log(removeBox);
-                    if(textvalue === removeBox.value) {
-                        fourthFloorList.removeChild(match4);
-                        removeBox.value="";
-                        break;
-                    }
-                    else{
-                        alert("Room does not exist");
-                        removeBox.value="";
-                        //console.log(removeBox.textContent);
-                        break;
-                    }
-                }
-            }
+        });
+
+        if (roomFound) {
+            removeBox.value = "";
+            saveCheckouts();
+        } else {
+            alert("Room does not exist");
+            removeBox.value = "";
         }
     }
 }
 
+document.getElementById("searchinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("searchbtn").click();
+    }
+});
+
+function searchRoom() {
+    const searchBox = document.getElementById("searchinput-button");
+    const floors = [".first-content", ".second-content", ".third-content", ".fourth-content"];
+
+    let roomFound = false;
+
+    floors.forEach(floor => {
+        const list = document.querySelector(floor);
+        const items = list.getElementsByTagName("li");
+
+        for (let i = 0; i < items.length; i++) {
+            let match = items[i];
+            if (match.textContent.toUpperCase().includes(searchBox.value.toUpperCase())) {
+                items[i].style.backgroundColor = "yellow"; 
+                if (!roomFound) {
+                    items[i].scrollIntoView({ behavior: "smooth", block: "center" });
+                    roomFound = true;
+                }
+                setTimeout(() => {
+                    items[i].style.backgroundColor = "";
+                }, 3000);
+                break;
+            } else {
+                items[i].style.backgroundColor = ""; 
+            }
+        }
+    });
+    searchBox.value = ""; 
+
+    if (!roomFound) {
+        alert("Room does not exist");
+    }
+}

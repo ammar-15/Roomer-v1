@@ -1,6 +1,12 @@
 
 // NEW STAYOVERS //
 
+document.getElementById("newstayoversinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("addNStaybtn").click();
+    }
+});
+
 function addRoomNStay() {
     const inputBoxNStay = document.getElementById("newstayoversinput-button");
     const listContainerNStay = document.querySelector(".newstayovers-list");
@@ -50,6 +56,12 @@ function showNStay() {
 }
 
 showNStay();
+
+document.getElementById("removenewstayoversinput-button").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("removeNStaybtn").click();
+    }
+});
 
 function removeRoomNStay() {
     const removeBoxNStay = document.getElementById("removenewstayoversinput-button");
