@@ -31,9 +31,6 @@
         <div class="time"></div>
         <div class="date"></div>
         </div>
-        <div class="resetall-container">
-            <button class="resetall-button" onclick="resetAll()" />reset all</button>
-        </div>
         <div class="dailyData-container">
             <div class="dailyData">
                 <div class="inHouse">Inhouse: 
@@ -41,10 +38,11 @@
                 </div>
                 <div class="stayovers">Stayovers: 
                     <input type="text" id="totalstayovers-input" placeholder="Rooms staying over">
-             </div>
+                </div>
                 <div class="checkouts">Checkouts: 
                     <input type="text" id="totalcheckouts-input" placeholder="Total checkouts">
                 </div>
+                <br>
                 <div class="printall-container">
                     <button id="printall-button"/>print all</button>
                     <iframe id="page0" src="index.html" style="display: none;"></iframe>
@@ -53,7 +51,10 @@
                     <iframe id="page3" src="noShows.html" style="display: none;"></iframe>
                     <iframe id="page4" src="notes.html" style="display: none;"></iframe>    
                 </div>
+                <div class="resetall-container">
+                    <button class="resetall-button" onclick="resetAll()" />reset all</button>
                 </div>
+            </div>
         </div>
         <nav class="navbar">
             <ul>
