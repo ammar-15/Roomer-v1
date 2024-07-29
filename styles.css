@@ -23,7 +23,6 @@ body {
   padding: 0px;
   background-color: var(--cream);
   background-size:100%;
-  /* height: 100vh; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -33,11 +32,6 @@ body {
   font-style: normal;
 }
 
-
-main {
-  /* margin-left: 2%;
-  margin-right: 2%; */
-}
 
 .date-container {
   display: flex;
@@ -49,7 +43,6 @@ main {
 .date {
   display: flex;
   padding: 10px;
-  height: 15px;
   border-radius: 10px;
   margin: 5px 5px;
   background: #ffffff9c;
@@ -62,7 +55,6 @@ main {
 .time {
   display: flex;
   padding: 10px;
-  height: 15px;
   border-radius: 10px;
   margin: 5px 5px;
   background: #ffffff9c;
@@ -79,13 +71,11 @@ main {
 }
 
 .dailyData {
-  margin: 0px 50px 0px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-self: center;
   background: #ffffff9c;
-  width: 1000px;
   border-radius: 10px;
   gap: 20px;
 }
@@ -104,6 +94,19 @@ main {
   border: 0;
   background-color: transparent;
 }
+
+#printall-button{
+  border: 0px;
+  background-color: transparent;
+  max-width: 0px;
+}
+
+#resetall-button{
+  border: 0px;
+  background-color: transparent;
+  max-width: 0px;
+}
+
 /*
 .sidenav {
   width: 150px;
