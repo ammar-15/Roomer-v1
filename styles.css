@@ -1,3 +1,10 @@
+:root {
+  --deep-purple: #3a2648;
+  --cream: #ffeede;
+  --soft-purple: #eae0ff;
+  --charcoal-gray: #36454F;
+  --white: #FFFFFF;
+}
 h1 {
   margin-top: 1%;
   margin-bottom:0.8%;
@@ -6,7 +13,7 @@ h1 {
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  color: rgb(67, 76, 48);
+  color: var(--deep-purple);
   outline: none;
   text-align:center;
 }
@@ -14,9 +21,8 @@ h1 {
 body {
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(135deg, #9affd8, #c296ff);
-  background-size: cover;
-  /* height: 100vh; */
+  background-color: var(--cream);
+  background-size:100%;
   font-family: "Poppins", sans-serif;
 }
 
@@ -26,11 +32,6 @@ body {
   font-style: normal;
 }
 
-
-main {
-  /* margin-left: 2%;
-  margin-right: 2%; */
-}
 
 .date-container {
   display: flex;
@@ -42,10 +43,9 @@ main {
 .date {
   display: flex;
   padding: 10px;
-  height: 15px;
   border-radius: 10px;
   margin: 5px 5px;
-  background-color: #f1f7f9bf;
+  background: #ffffff9c;
   justify-content: center;
   align-items: center;
   font-size: 18px;
@@ -55,10 +55,9 @@ main {
 .time {
   display: flex;
   padding: 10px;
-  height: 15px;
   border-radius: 10px;
   margin: 5px 5px;
-  background-color: #f1f7f9bf;
+  background: #ffffff9c;
   justify-content: center;
   align-items: center;
   font-size: 18px;
@@ -72,14 +71,11 @@ main {
 }
 
 .dailyData {
-  margin: 0px 50px 0px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-self: center;
-
-  background-color: #f1f1f9bf;
-  width: 1000px;
+  background: #ffffff9c;
   border-radius: 10px;
   gap: 20px;
 }
@@ -98,6 +94,19 @@ main {
   border: 0;
   background-color: transparent;
 }
+
+#printall-button{
+  border: 0px;
+  background-color: transparent;
+  max-width: 0px;
+}
+
+#resetall-button{
+  border: 0px;
+  background-color: transparent;
+  max-width: 0px;
+}
+
 /*
 .sidenav {
   width: 150px;
@@ -162,7 +171,7 @@ main {
 
 .navbar ul{
   list-style-type: none;
-  background-color: hsl(180, 33%, 24%);
+  background-color: var(--deep-purple);
   padding: 0px;
   margin: 0px;
   width: 100%;
@@ -180,9 +189,9 @@ main {
 }
 
 .navbar a:hover{
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsla(0, 0%, 10%, 0.666);
   transition: 0.2s ease-in;
-
+  border-radius:28px;
 }
 
 
@@ -204,8 +213,6 @@ main {
 .addroom-main {
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(135deg, #9affd8, #c296ff);
-  background-size: cover;
 }
   
 .addroom-container {
@@ -222,10 +229,10 @@ main {
   margin-bottom: 24px;
   padding: 10px;
   font-size: 50px;
+  color: var(--deep-purple);
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  color: rgb(67, 76, 48);
   outline: none;
   text-align:left;
 }
@@ -258,7 +265,7 @@ main {
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
@@ -273,7 +280,7 @@ main {
 }
 
 .search-button:hover {
-  background: rgba(0, 0, 0, 0.17);
+  background: rgba(0, 0, 0, 0.337);
   font-size: 14px;
   transition: 400ms ease-in-out;
 }  
@@ -308,7 +315,7 @@ main {
   display: flex;
   justify-content:center;
   padding: 16px 50px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 15px;
   width: 75px;
   font-size: 14px;
@@ -351,7 +358,7 @@ main {
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 11px;
   cursor: pointer;
@@ -412,7 +419,7 @@ user-select: none;
   margin: 0px;
   padding: 0px 10px;
   font-size: large;
-  color: #000000;
+  color: var(--deep-purple);
   background-color: #ffff;
   border-radius: 15px 15px 0px 0px;
 
@@ -457,7 +464,7 @@ user-select: none;
   margin: 0px;
   padding: 0px 10px;
   font-size: large;
-  color: #000000;
+  color: var(--deep-purple);
   background-color: #ffff;
  border-radius: 15px 15px 0px 0px;
 
@@ -502,7 +509,7 @@ user-select: none;
     margin: 0px;
     padding: 0px 10px;
     font-size: large;
-    color: #000000;
+    color: var(--deep-purple);
     background-color: #ffff;
     border-radius: 15px 15px 0px 0px;
   }
@@ -547,7 +554,7 @@ user-select: none;
       margin: 0px;
       padding: 0px 10px;
       font-size: large;
-      color: #000000;
+      color: var(--deep-purple);
       background-color: #ffff;
       border-radius: 15px 15px 0px 0px;
     }
@@ -590,9 +597,6 @@ user-select: none;
 .latecheckout-main {
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(135deg, #9affd8, #c296ff);
-  background-size: cover;
-  height: 75%;
 }
   
 .addlatecheckout-container {
@@ -613,7 +617,7 @@ user-select: none;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  color: rgb(67, 76, 48);
+  color: var(--deep-purple);
   outline: none;
   text-align: left;
 }
@@ -649,7 +653,7 @@ user-select: none;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
@@ -731,7 +735,7 @@ padding: 0px;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 11px;
   cursor: pointer;
@@ -767,7 +771,7 @@ padding: 0px;
 .newstayovers-main {
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(135deg, #9affd8, #c296ff);
+  /* background: linear-gradient(135deg, #9affd8, #c296ff); */
   background-size: cover;
   height: 75%;
 }
@@ -790,7 +794,7 @@ padding: 0px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
   font-variation-settings: "wght" 311;
-  color: rgb(67, 76, 48);
+  color: var(--deep-purple);
   outline: none;
   text-align: left;
 }
@@ -809,7 +813,7 @@ padding: 0px;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
@@ -892,7 +896,7 @@ font-weight: 600;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 11px;
   cursor: pointer;
@@ -915,7 +919,7 @@ font-weight: 600;
   .noshows-main {
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(135deg, #9affd8, #c296ff);
+    /* background: linear-gradient(135deg, #9affd8, #c296ff); */
     background-size: cover;
     height: 75%;
   }
@@ -928,7 +932,7 @@ font-weight: 600;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
-    color: rgb(67, 76, 48);
+    color: var(--deep-purple);
     outline: none;
     text-align: left;
   }
@@ -971,7 +975,7 @@ font-weight: 600;
     border: none;
     outline: none;
     padding: 10px 30px;
-    background: rgba(168, 204, 213, 0.433);
+    background: rgba(184, 165, 199, 0.467);
     border-radius: 28px;
     font-size: 14px;
     cursor: pointer;
@@ -1054,7 +1058,7 @@ padding: 0px;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 11px;
   cursor: pointer;
@@ -1075,8 +1079,6 @@ padding: 0px;
   .notes-main {
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(135deg, #bcff9a, #96c0ff);
-    background-size: cover;
     height: 75%;
   }
 
@@ -1099,7 +1101,7 @@ padding: 0px;
     font-family: 'Gambetta', serif;
     letter-spacing: -3px;
     font-variation-settings: "wght" 311;
-    color: rgb(67, 76, 48);
+    color: var(--deep-purple);
     outline: none;
     text-align: left;
   }
@@ -1132,7 +1134,7 @@ padding: 0px;
   border: none;
   outline: none;
   padding: 10px 30px;
-  background: rgba(168, 204, 213, 0.433);
+  background: rgba(184, 165, 199, 0.467);
   border-radius: 28px;
   font-size: 14px;
   cursor: pointer;
@@ -1163,7 +1165,7 @@ padding: 0px;
   }
 
   .add-notes {
-    background-color: rgba(24, 41, 15, 0.095);
+    background: rgba(184, 165, 199, 0.467);
     border-radius: 10px;
     font-size: 120px;
     height: 200px;
