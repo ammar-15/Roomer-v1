@@ -5,10 +5,16 @@
   --charcoal-gray: #36454F;
   --white: #FFFFFF;
 }
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1%;
+}
+
 h1 {
-  margin-top: 1%;
-  margin-bottom:0.8%;
-  padding: 0;
+  flex: 1;
+  padding: 0px 10px;
   font-size: 50px;
   font-family: 'Gambetta', serif;
   letter-spacing: -3px;
@@ -16,6 +22,10 @@ h1 {
   color: var(--deep-purple);
   outline: none;
   text-align:center;
+  display: flex;
+  margin: 0% 4%;
+  justify-content: left;
+  align-items: left;
 }
 
 body {
@@ -34,9 +44,11 @@ body {
 
 
 .date-container {
+  flex:1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0% 4%;
+  justify-content: right;
+  align-items: right;
   transition: 400ms ease ;
 }
 
@@ -71,7 +83,7 @@ body {
 }
 
 .dailyData {
-  padding: 20px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -95,16 +107,26 @@ body {
   background-color: transparent;
 }
 
+.printall-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #printall-button{
   border: 0px;
   background-color: transparent;
-  max-width: 0px;
+}
+
+.resetall-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #resetall-button{
   border: 0px;
   background-color: transparent;
-  max-width: 0px;
 }
 
 /*
@@ -166,7 +188,7 @@ body {
 */
 
 .navbar {
-  margin-top: 1%;
+  margin-top: 0.7%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,18 +239,14 @@ body {
 }
   
 .addroom-container {
-  margin: 0px 50px 0px;
-  padding: 20px 50px;
-  display: grid;
-  justify-content: space-around;
+
+  display: flex;
   align-items: center;
-  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
 }
 
 .addroom-h2 {
-  margin-top: 20px;
-  margin-bottom: 24px;
-  padding: 10px;
+
   font-size: 50px;
   color: var(--deep-purple);
   font-family: 'Gambetta', serif;
@@ -236,6 +254,11 @@ body {
   font-variation-settings: "wght" 311;
   outline: none;
   text-align:left;
+  flex: 1;
+  display: flex;
+  margin: 0% 4%;
+  justify-content: left;
+  align-items: left;
 }
 
 .search{
@@ -243,12 +266,11 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
   height: 25px;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
 }
 #searchinput-button {
@@ -292,7 +314,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
@@ -335,12 +356,11 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
   height: 25px;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
 }
 
