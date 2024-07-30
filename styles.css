@@ -166,14 +166,15 @@ body {
 */
 
 .navbar {
-  margin-top: 40px;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar ul{
   list-style-type: none;
   background-color: var(--deep-purple);
-  padding: 0px;
-  margin: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
