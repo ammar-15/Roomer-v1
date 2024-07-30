@@ -239,18 +239,14 @@ body {
 }
   
 .addroom-container {
-  margin: 0px 50px 0px;
-  padding: 20px 50px;
-  display: grid;
-  justify-content: space-around;
+
+  display: flex;
   align-items: center;
-  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
 }
 
 .addroom-h2 {
-  margin-top: 20px;
-  margin-bottom: 24px;
-  padding: 10px;
+
   font-size: 50px;
   color: var(--deep-purple);
   font-family: 'Gambetta', serif;
@@ -258,6 +254,11 @@ body {
   font-variation-settings: "wght" 311;
   outline: none;
   text-align:left;
+  flex: 1;
+  display: flex;
+  margin: 0% 4%;
+  justify-content: left;
+  align-items: left;
 }
 
 .search{
@@ -265,12 +266,11 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
   height: 25px;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
 }
 #searchinput-button {
@@ -314,7 +314,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
@@ -357,12 +356,11 @@ body {
   align-items: center;
   justify-content: center;
   width: 200px;
-  margin: 0px 20px;
   background: #ffffff9c;
   border-radius: 30px;
   padding: 20px;
   height: 25px;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
 }
 
