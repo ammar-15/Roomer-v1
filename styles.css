@@ -15,9 +15,9 @@
 h1 {
   flex: 1;
   padding: 0px 10px;
-  font-size: 50px;
-  font-family: 'Gambetta', serif;
-  letter-spacing: -3px;
+  font-size: 40px;
+  font-family: 'Poppins', serif;
+  letter-spacing: -2px;
   font-variation-settings: "wght" 311;
   color: var(--deep-purple);
   outline: none;
@@ -169,8 +169,10 @@ body {
   border-radius: 10px;
   background-color: white;
   margin: 24px;
-  height: 59vh;
+  height: 70vh;
   padding: 24px;
+  overflow-y: scroll;
+
 }
 
 
@@ -192,8 +194,8 @@ body {
 
   font-size: 50px;
   color: var(--deep-purple);
-  font-family: 'Gambetta', serif;
-  letter-spacing: -3px;
+  font-family: 'Poppins', serif;
+  letter-spacing: -2px;
   font-variation-settings: "wght" 311;
   outline: none;
   text-align:left;
@@ -558,8 +560,8 @@ user-select: none;
 .latecheckout-h2 {
   font-size: 50px;
   color: var(--deep-purple);
-  font-family: 'Gambetta', serif;
-  letter-spacing: -3px;
+  font-family: 'Poppins', serif;
+  letter-spacing: -2px;
   font-variation-settings: "wght" 311;
   outline: none;
   text-align:left;
@@ -730,8 +732,8 @@ padding: 0px;
 .newstayovers-h2 {
   font-size: 50px;
   color: var(--deep-purple);
-  font-family: 'Gambetta', serif;
-  letter-spacing: -3px;
+  font-family: 'Poppins', serif;
+  letter-spacing: -2px;
   font-variation-settings: "wght" 311;
   outline: none;
   text-align:left;
@@ -884,8 +886,8 @@ font-weight: 600;
   .noshows-h2 {
     font-size: 50px;
     color: var(--deep-purple);
-    font-family: 'Gambetta', serif;
-    letter-spacing: -3px;
+    font-family: 'Poppins', serif;
+    letter-spacing: -2px;
     font-variation-settings: "wght" 311;
     outline: none;
     text-align:left;
@@ -1039,8 +1041,8 @@ padding: 0px;
   .notes-h2 {
     font-size: 50px;
     color: var(--deep-purple);
-    font-family: 'Gambetta', serif;
-    letter-spacing: -3px;
+    font-family: 'Poppins', serif;
+    letter-spacing: -2px;
     font-variation-settings: "wght" 311;
     outline: none;
     text-align:left;
