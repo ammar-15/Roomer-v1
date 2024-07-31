@@ -169,8 +169,10 @@ body {
   border-radius: 10px;
   background-color: white;
   margin: 24px;
-  height: 59vh;
+  height: 70vh;
   padding: 24px;
+  overflow-y: scroll;
+
 }
 
 
