@@ -52,8 +52,6 @@ Developing Roomer v1 taught me a lot about web development:
 
 Exciting features planned for future versions of Roomer include:
 - Full integration with **Bootstrap** for mobile usability.
-- A **reset button** to clear all data at the end of the day.
-- A **print all button** or alert to create physical backups of shift data.
 - **Multiple user support** with different access permissions.
 - Transitioning to a **database** for more robust data storage.
 - Additional features for housekeepers, room checkers, and supervisors to further smooth operations.
