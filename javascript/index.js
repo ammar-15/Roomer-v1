@@ -17,15 +17,38 @@ function formatDate(date) {
     const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    date.getDay()
-    return`${DAYS[date.getDay()]}, ${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+    return `${DAYS[date.getDay()]}, ${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
 }
 
-setInterval(() => {
+function updateDateTime() {
     const now = new Date();
     timeElement.textContent = formatTime(now);
     dateElement.textContent = formatDate(now);
-}, 200)
+
+    // Save to local storage
+    localStorage.setItem('date', formatDate(now));
+    localStorage.setItem('time', formatTime(now));
+}
+
+// Load saved date and time from local storage
+function loadDateTime() {
+    const savedDate = localStorage.getItem('date');
+    const savedTime = localStorage.getItem('time');
+
+    if (savedDate && savedTime) {
+        dateElement.textContent = savedDate;
+        timeElement.textContent = savedTime;
+    } else {
+        updateDateTime();
+    }
+}
+
+// Initial load
+loadDateTime();
+
+// Update every 200ms
+setInterval(updateDateTime, 200);
+
 
 
 // DAILY DATA //
