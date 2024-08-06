@@ -27,6 +27,7 @@ h1 {
   justify-content: left;
   align-items: left;
 }
+/* @media h1{} (min-width: 768px){} */
 
 body {
   margin: 0px;
