@@ -27,7 +27,12 @@ h1 {
   justify-content: left;
   align-items: left;
 }
-/* @media h1{} (min-width: 768px){} */
+@media (max-width: 600px){
+  h1 {
+    font-size: 30px;
+    text-align: left;
+  }
+}
 
 body {
   margin: 0px;
@@ -62,7 +67,12 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 18px;
+}
 
+@media (max-width: 600px){
+  .date {
+    font-size: 15px;
+  }
 }
 
 .time {
@@ -74,6 +84,13 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 18px;
+}
+
+@media (max-width: 600px){
+  .time {
+    font-size: 15px;
+    text-align: center;
+  }
 }
 
 .dailyData-container {
@@ -93,6 +110,17 @@ body {
   gap: 20px;
 }
 
+@media (max-width: 600px){
+  .dailyData {
+    display: grid;
+    grid-template-rows: 20% 20% 20%;
+    font-size: 15px;
+    gap: 3%;
+    padding: 2%;
+    justify-content: left;
+  }
+}
+
 #inhouse-input {
   border: 0;
   background-color: transparent;
@@ -108,16 +136,47 @@ body {
   background-color: transparent;
 }
 
+.button-container{
+  display: flex;
+  gap: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px){
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%
+  }
+}
+
 .printall-container{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media (max-width: 600px){
+  .printall-container {
+    align-self: left;
+    justify-self: left;
+    padding: 0% 3%;
+  }
+}
+
 #printall-button{
   border: 0px;
   position: absolute;
   background-color: transparent;
+}
+
+@media (max-width: 600px){
+  #printall-button {
+    align-self: center;
+    justify-self: center;
+  }
 }
 
 #printall-button:hover{
@@ -132,6 +191,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+
+@media (max-width: 600px){
+  .resetall-container {
+    align-self: left;
+    justify-self: left;
+  }
 }
 
 #resetall-button{
