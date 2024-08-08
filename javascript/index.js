@@ -14,8 +14,8 @@ function formatTime(date) {
 }
 
 function formatDate(date) {
-    const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     return `${DAYS[date.getDay()]}, ${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
 }
@@ -120,19 +120,19 @@ document.getElementById('printall-button').addEventListener('click', function ()
 // Reset all wip //
 
 function resetAll() {
-    alert("Please confirm that you wish to reset the data at end of day");
-    setTimeout( () => {
-    localStorage.clear(
-        "dailyData-inhouse", 
-        "checkoutsData", 
-        "dailyData-checkouts", 
-        "newStayoverData", 
-        "dailyData-stayovers", 
-        "noShowsData", 
-        "lateCheckoutData", 
-        "stickynotes-notes"), window.location.reload()}, 300
-    );
-    
-
+    const userConfirmed = confirm("Please confirm that you wish to reset the data at end of day");
+    if (userConfirmed) {
+        setTimeout(() => {
+            localStorage.removeItem("dailyData-inhouse");
+            localStorage.removeItem("checkoutsData");
+            localStorage.removeItem("dailyData-checkouts");
+            localStorage.removeItem("newStayoverData");
+            localStorage.removeItem("dailyData-stayovers");
+            localStorage.removeItem("noShowsData");
+            localStorage.removeItem("lateCheckoutData");
+            localStorage.removeItem("stickynotes-notes");
+            window.location.reload();
+        }, 300);
+    }
 }
 
