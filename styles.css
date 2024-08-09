@@ -117,8 +117,8 @@ body {
     display: grid;
     grid-template-rows: 20% 20% 20%;
     font-size: 15px;
-    gap: 3%;
     padding: 2%;
+    align-items: center;
     justify-content: center;
     font-size: 14px;
     margin-bottom: 2%;
@@ -130,14 +130,71 @@ body {
   background-color: transparent;
 }
 
+@media (max-width: 700px){
+  .inHouse {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 700px){
+  #inhouse-input {
+    display: flex;
+    font-size: 14px;
+    width: 30px;
+    align-self: center;
+    justify-content: center;
+  }
+}
+
 #totalstayovers-input {
   border: 0;
   background-color: transparent;
 }
 
+@media (max-width: 700px){
+  .stayovers {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 700px){
+  #totalstayovers-input {
+    display: flex;
+    font-size: 14px;
+    width: 30px;
+    align-self: center;
+    justify-content: center;
+  }
+}
+
 #totalcheckouts-input {
   border: 0;
   background-color: transparent;
+}
+
+@media (max-width: 700px){
+  .checkouts {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 700px){
+  #totalcheckouts-input {
+    display: flex;
+    font-size: 14px;
+    width: 30px;
+    align-self: center;
+    justify-content: center;
+  }
 }
 
 .button-container{
@@ -152,6 +209,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex:1;
     gap: 20%
   }
 }
@@ -260,34 +318,18 @@ nav {
   transform: scale(1.08);
 }
 
-@media (max-width: 700px) {
-  .navbar-expand-lg .navbar-collapse {
-      display: none;
-  }
-  .navbar-expand-lg .navbar-toggler {
-      display: block;
-      transition: 0.2s ease-in;
-
-  }
-
-  .navbar-expand-lg .navbar-collapse.show {
-      display: flex !important;
-      flex-basis: auto;
-      transition: 0.2s ease-in;
-  }
-
-  .navbar-nav .nav-link:active {
-      transform: scale(1.08);
-      transition: 0.2s ease-in;
-  }
-}
-
 .navbar-toggler {
   border: 0px;
+  box-shadow: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  box-shadow: none;
 }
 
 
